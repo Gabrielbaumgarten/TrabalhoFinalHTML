@@ -79,6 +79,7 @@ body{
     position: relative;
 
     cursor: pointer;
+    transition: 1s ease-in;
 }
 
 .main .text button .background-hover{
@@ -114,6 +115,9 @@ body{
     transition: .5s .4s ease-in;
 }
 
+.main .text button:hover{
+    transform: scale(1.05);
+}
 
 .main .text button:hover .background-hover{
     width: 100%;
@@ -151,3 +155,4 @@ video{
     width: 100%;
     z-index: -1;
 }
+
