@@ -116,3 +116,31 @@ function PreencherId(id){
     var id_categoria = document.getElementById('id_categoria')
     id_categoria.value = id
 }
+
+function ListarCategoriasDropdown(){
+    const httpRequest = new XMLHttpRequest()
+    var resposta = ''
+
+    httpRequest.onload = () => {
+        resposta = JSON.parse(httpRequest.response)
+    }
+
+    httpRequest.open('GET', 'http://loja.buiar.com/?key=3Tz81Yftd3C&c=categoria&t=listar&f=json', false)
+    httpRequest.send()
+
+    resposta.dados.forEach( categoria =>{
+        var p = document.createElement('p')
+        p.innerHTML = categoria.nome
+
+        p.setAttribute('onclick', 'SelecionarCategoria("'+ categoria.nome +'")')
+        // p.setAttribute('onclick', "SelecionarCategoria()")
+
+        document.getElementById('myDropdown').appendChild(p)
+    })
+}
+
+function SelecionarCategoria(nome){
+    console.log('Aqui')
+    var dropdownButton = document.getElementById('dropdown-button')
+    dropdownButton.innerHTML = nome
+}

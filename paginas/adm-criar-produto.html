@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/adm-criar-produto.css">
     <script src="../js/transicao.js"></script>
     <script src="../js/produtos.js"></script>
+    <script src="../js/dropdown.js"></script>
     <script src="../js/categorias.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +17,7 @@
     <title>Document</title>
 </head>
 
-<body >
+<body onload="ListarCategoriasDropdown()">
 
     <div class="top-bar">
         <div class="logo">
@@ -38,7 +39,7 @@
 
     <div class="conteudo">
 
-        <form action="" method="post">
+        <div class="formulario">
             <label for="">Código do Produto</label>
             <input type="number">
 
@@ -46,11 +47,8 @@
             <input type="text">
             <label for="">Categoria</label>
             <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                <button id='dropdown-button' onclick="myFunction()" class="dropbtn">Escolha uma categoria</button>
                 <div id="myDropdown" class="dropdown-content">
-                  <a href="#home">Home</a>
-                  <a href="#about">About</a>
-                  <a href="#contact">Contact</a>
                 </div>
             </div>
             <label for="">Descrição</label>
@@ -62,7 +60,8 @@
             <label for="">Peso</label>
             <input type="text">
 
-        </form>
+            <button onclick="CriarCategoria()">Cadastrar</button>
+        </div>
         
     </div>
 
