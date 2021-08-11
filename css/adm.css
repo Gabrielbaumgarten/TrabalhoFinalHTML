@@ -189,9 +189,14 @@ body {
   color: var(--primary);
 }
 
-.opcoesCategorias :hover {
+.opcoesCategorias .nova:hover,
+.opcoesCategorias .listar:hover,
+.opcoesCategorias .alterar:hover,
+.opcoesCategorias .remover:hover{
   background: rgba(245, 245, 247, 0.62);
   box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
 }
 
 .tituloListarCategorias {
