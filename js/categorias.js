@@ -49,6 +49,11 @@ function CriarCategoria(){
 
     var nome_categoria = document.getElementById('nome_categoria').value
 
+    if(nome_categoria == '') {
+        alert('Preencha o nome da categoria!')
+        return
+    }
+
     httpRequest.onload = () => {
         resposta = JSON.parse(httpRequest.response)
     }

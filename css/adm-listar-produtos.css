@@ -1,161 +1,169 @@
 * {
-    font-size: 80%;
-    margin: 0;
-    padding: 0;
-    --branco: #F5F5F7;
-    --cinza: #EBEBEB;
-    --primary: #736862;
-    --secondary: #B88F8F;
+  font-size: 80%;
+  margin: 0;
+  padding: 0;
+  --branco: #f5f5f7;
+  --cinza: #ebebeb;
+  --primary: #736862;
+  --secondary: #b88f8f;
 }
 
 body {
-    background: linear-gradient(270.3deg, #E3E3E3 0.29%, #F5F5F7 36.05%, #F5F5F7 49%, #F5F5F7 61.95%, #E3E3E3 99.78%);
-    ;
+  background: linear-gradient(
+    270.3deg,
+    #e3e3e3 0.29%,
+    #f5f5f7 36.05%,
+    #f5f5f7 49%,
+    #f5f5f7 61.95%,
+    #e3e3e3 99.78%
+  );
 }
 
 .top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 10vh;
-    margin-top: 8vh;
-    padding-right: 3vw;
-    padding-left: 3vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  margin-top: 8vh;
+  padding-right: 3vw;
+  padding-left: 3vw;
 }
 
 .top-bar .icon-menu svg {
-    width: 2rem;
+  width: 2rem;
 }
 
-
-.caminho{
-    width: 100%;
-    height: 10vh;
-
-    display: flex;
-    align-items: center;
+.caminho {
+  position: absolute;
+  width: 42%;
+  height: 4%;
+  left: 5%;
+  top: 20%;
 }
 
-.caminho p{
-    margin-left: 3vw;
-
-    font-family: Nunito;
-    font-size: 16px;
-    letter-spacing: .2em;
-    color: var(--primary);
+.caminho a {
+  text-decoration: none;
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  /* identical to box height */
+  letter-spacing: 0.2em;
+  color: var(--primary);
 }
 
-.produtos{
-    width: 80%;
-    height: 65vh;
+.produtos {
+  width: 80%;
+  height: 65vh;
 
-    padding-left: 5vw;
-    padding-right: 5vw;
+  margin-top: 10vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
-.produtos .novo-produto{
-    display: flex;
-    justify-content: space-between;
+.produtos .novo-produto {
+  display: flex;
+  justify-content: space-between;
 
-    width: 100%;
+  width: 100%;
 }
 
-.produtos .novo-produto .headers{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.produtos .novo-produto .headers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    width: 80%;
+  width: 80%;
 }
 
-.produtos .novo-produto .headers #header-id{
-    transform:translateX(2rem);
+.produtos .novo-produto .headers #header-id {
+  transform: translateX(2rem);
 }
 
-.produtos .novo-produto .headers #header-img{
-    transform:translateX(-3rem);
+.produtos .novo-produto .headers #header-img {
+  transform: translateX(-3rem);
 }
 
-.produtos .novo-produto .headers #header-nome{
-    transform:translateX(-2.5rem);
+.produtos .novo-produto .headers #header-nome {
+  transform: translateX(-2.5rem);
 }
-.produtos .novo-produto .headers #header-preco{
-    transform:translateX(-2rem);
-}
-
-.produtos .novo-produto > a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-decoration: none;
+.produtos .novo-produto .headers #header-preco {
+  transform: translateX(-2rem);
 }
 
-.produtos .novo-produto p{
-    font-family: Nunito;
-    font-size: 1rem;
-    letter-spacing: .2em;
-    color: var(--primary);
+.produtos .novo-produto > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    margin-left: .5rem;
+  text-decoration: none;
 }
 
-.produtos .lista-produtos{
-    width: 100%;
-    height: 100%;
+.produtos .novo-produto p {
+  font-family: Nunito;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  color: var(--primary);
 
-    overflow-y: auto;
+  margin-left: 0.5rem;
 }
 
-.produtos .lista-produtos .produto{
-    width: 100%;
-    height: 10vh;
+.produtos .lista-produtos {
+  width: 100%;
+  height: 100%;
 
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    margin-right: 1rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-
-    background: rgba(121, 111, 105, 0.1);
-    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
 }
 
-.produtos .lista-produtos .produto > img{
-    width: 5%;
+.produtos .lista-produtos .produto {
+  width: 100%;
+  height: 10vh;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(121, 111, 105, 0.1);
+  box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
 }
 
-.produtos .lista-produtos .produto p{
-    margin-left: 2rem;
-
-    font-family: Nunito;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: .2em;
-
-    color: var(--primary);
+.produtos .lista-produtos .produto > img {
+  width: 5%;
 }
 
-.produtos .lista-produtos .produto h1{
-    margin-left: 2rem;
+.produtos .lista-produtos .produto p {
+  margin-left: 2rem;
 
-    font-family: Nunito;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: .2em;
+  font-family: Nunito;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
 
-    color: var(--primary);
+  color: var(--primary);
 }
 
-.produtos .lista-produtos .produto .buttons{
-    width: 10rem;
-    display: flex;
-    justify-content: space-around;
+.produtos .lista-produtos .produto h1 {
+  margin-left: 2rem;
+
+  font-family: Nunito;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+
+  color: var(--primary);
 }
 
-.produtos .lista-produtos .produto .buttons img{
-    cursor: pointer;
+.produtos .lista-produtos .produto .buttons {
+  width: 10rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.produtos .lista-produtos .produto .buttons img {
+  cursor: pointer;
 }

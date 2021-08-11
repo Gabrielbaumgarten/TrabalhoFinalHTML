@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/adm.css">
-    <script src=""></script>
+    <link rel="stylesheet" href="../css/adm-criar-produto.css">
+    <script src="../js/transicao.js"></script>
+    <script src="../js/produtos.js"></script>
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/categorias.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +17,7 @@
     <title>Document</title>
 </head>
 
-<body>
+<body onload="ListarCategoriasDropdown()">
 
     <div class="top-bar">
         <div class="logo">
@@ -30,22 +33,42 @@
         </div>
     </div>
 
-    <div class="titulo">
-        <a href="../paginas/adm-main.html">Seção de administração</a>
+    <div class="caminho">
+      <a href="../paginas/adm-main.html">Seção de administração > </a>
+      <a href="../paginas/adm-produtos.html">Produtos > </a>
+      <a href="../paginas/adm-alterar-produtos.html">Alterar</a>
     </div>
 
-    <div class="opcoes">
-        <div class="categorias">
-            <img src="../assets/icon-cat.svg">
-            <a href="../paginas/adm-categorias.html">Categorias</a>
-        </div>
+    <div class="conteudo">
 
-        <div class="produtos">
-            <img src="../assets/icon-prod.svg">
-            <a href="../paginas/adm-produtos.html">Produtos</a>
-        </div>
-    </div>
+      <div class="formulario">
+          <label for="">Id do Produto</label>
+          <input type="text" id='id_produto' value="">
 
+          <label for="">Código do Produto</label>
+          <input type="number">
+
+          <label for="">Nome do Produto</label>
+          <input type="text">
+          <label for="">Categoria</label>
+          <div class="dropdown">
+              <button id='dropdown-button' onclick="myFunction()" class="dropbtn">Escolha uma categoria</button>
+              <div id="myDropdown" class="dropdown-content">
+              </div>
+          </div>
+          <label for="">Descrição</label>
+          <input type="text">
+          <label for="">Preço</label>
+          <input type="text">
+          <label for="">Imagem</label>
+          <input type="text">
+          <label for="">Peso</label>
+          <input type="text">
+
+          <button onclick="CriarCategoria()">Alterar</button>
+      </div>
+      
+  </div>
 
 </body>
 
