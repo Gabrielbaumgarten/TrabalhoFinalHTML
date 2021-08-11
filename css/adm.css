@@ -142,6 +142,8 @@ body {
   background: rgba(121, 111, 105, 0.1);
   align-items: center;
   justify-content: center;
+
+  transition: .7s ease-in;
 }
 
 .opcoesCategorias .listar {
@@ -154,6 +156,8 @@ body {
   align-items: center;
   justify-content: center;
   background: rgba(121, 111, 105, 0.1);
+
+  transition: .7s ease-in;
 }
 
 .opcoesCategorias .alterar {
@@ -166,6 +170,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: .7s ease-in;
 }
 
 .opcoesCategorias .remover {
@@ -178,6 +184,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: .7s ease-in;
 }
 
 .opcoesCategorias a {
