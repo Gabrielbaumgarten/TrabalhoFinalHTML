@@ -107,3 +107,55 @@ function RemoverProduto(id) {
     alert('OPS! Tivermos um problema ao tentar remover seu produto.')
   }
 }
+
+function CriarProduto(){
+  const httpRequest = new XMLHttpRequest()
+    var resposta = ''
+
+    var codigo_produto = document.getElementById('codigo_produto').value
+    var nome_produto = document.getElementById('nome_produto').value
+    var categoria_produto = document.getElementById('dropdown-button').innerHTML
+    var descricao_produto = document.getElementById('descricao_produto').value
+    var preco_produto = document.getElementById('preco_produto').value
+    var img_produto = document.getElementById('img_produto').value
+    var peso_produto = document.getElementById('peso_produto').value
+
+
+
+    httpRequest.onload = () => {
+      resposta = JSON.parse(httpRequest.response)
+    }
+
+    httpRequest.open('GET', 'http://loja.buiar.com/?key=3Tz81Yftd3C&c=categoria&t=listar&f=json', false)
+    httpRequest.send()
+
+
+    resposta.dados.forEach( categoria =>{
+      if(categoria.nome == categoria_produto){
+        categoria_produto = categoria.id
+      }
+    })
+
+
+    httpRequest.onload = () => {
+        resposta = JSON.parse(httpRequest.response)
+    }
+
+    httpRequest.open('GET', "http://loja.buiar.com/?key=3Tz81Yftd3C&c=produto&t=inserir"+
+    '&codigo=' + codigo_produto +
+    '&categoria=' + categoria_produto +
+    '&nome='+ nome_produto +
+    '&descricao=' + descricao_produto +
+    '&preco=' + preco_produto +
+    '&imagem=' + img_produto +
+    '&peso=' + peso_produto +
+    "&f=json", false)
+    httpRequest.send()
+
+
+    if(resposta.status == 'OK'){
+        alert('Categoria criada com sucesso')
+
+        window.location.replace('adm-listar-produtos.html')
+    }
+}
