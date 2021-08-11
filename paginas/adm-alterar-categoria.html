@@ -1,11 +1,11 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/adm-listar-categoria.css">
+    <link rel="stylesheet" href="../css/adm-criar-categoria.css">
     <script src="../js/transicao.js"></script>
     <script src="../js/categorias.js"></script>
 
@@ -15,7 +15,7 @@
     <title>Document</title>
 </head>
 
-<body onload="ListarCategorias()">
+<body >
 
     <div class="top-bar">
         <div class="logo">
@@ -32,20 +32,19 @@
     </div>
 
     <div class="caminho">
-        <p>Seção de Administração > Categorias > Listar</p>
+        <p>Seção de Administração > Produtos > Alterar</p>
     </div>
 
-    <div class="categorias">
+    <div class="conteudo">
 
-        <div class="nova-categoria">
-                <a href="./adm-criar-categoria.html">
-                    <img src="../assets/icon-new.svg" alt="add">
-                    <p>Nova Categoria</p>
-                </a>
-        </div>
+        <div class='formulario'>
 
-        <div id='lista-categorias' class="lista-categorias">
+            <label for="nome_categoria">Id da Categoria</label>
+            <input type="text" id='id_categoria' value="">
+            <label for="nome_categoria">Nome da Categoria</label>
+            <input type="text" id='nome_categoria'>
             
+            <button onclick="AlterarCategoria()">Alterar</button>
         </div>
         
     </div>

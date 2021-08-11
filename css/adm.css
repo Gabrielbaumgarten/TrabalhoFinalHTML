@@ -109,6 +109,8 @@ body {
     line-height: 25px;
     /* identical to box height */
     letter-spacing: 0.2em;
+
+    color: var(--primary);
 }
 
 .opcoesCategorias .nova {
