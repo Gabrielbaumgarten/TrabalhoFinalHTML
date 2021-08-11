@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/adm-listar-produtos.css">
     <script src="../js/transicao.js"></script>
-    <script src="../js/categorias.js"></script>
+    <script src="../js/produtos.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,10 +38,19 @@
     <div class="produtos">
 
         <div class="novo-produto">
-            <div>
+            <div class="headers">
+                <p id='header-id'>Id</p>
+                <p id='header-categoria'>Categoria</p>
+                <p id='header-img'>Imagem</p>
+                <p id='header-nome'>Nome</p>
+                <p id='header-codigo'>Código</p>
+                <p id='header-preco'>Preço</p>
+            </div>
+            <a href="./adm-criar-produto.html">
                 <img src="../assets/icon-new.svg" alt="add">
                 <p>Novo Produto</p>
-            </div>
+            </a>
+
         </div>
 
         <div id='lista-produtos' class="lista-produtos">

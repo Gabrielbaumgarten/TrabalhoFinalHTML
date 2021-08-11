@@ -55,11 +55,32 @@ body {
 
 .produtos .novo-produto{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 
     width: 100%;
+}
 
-    cursor: pointer;
+.produtos .novo-produto .headers{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 80%;
+}
+
+.produtos .novo-produto .headers #header-id{
+    transform:translateX(2rem);
+}
+
+.produtos .novo-produto .headers #header-img{
+    transform:translateX(-3rem);
+}
+
+.produtos .novo-produto .headers #header-nome{
+    transform:translateX(-2.5rem);
+}
+.produtos .novo-produto .headers #header-preco{
+    transform:translateX(-2rem);
 }
 
 .produtos .novo-produto > a{
@@ -103,12 +124,27 @@ body {
     box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
 }
 
+.produtos .lista-produtos .produto > img{
+    width: 5%;
+}
+
 .produtos .lista-produtos .produto p{
     margin-left: 2rem;
 
     font-family: Nunito;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: .2em;
+
+    color: var(--primary);
+}
+
+.produtos .lista-produtos .produto h1{
+    margin-left: 2rem;
+
+    font-family: Nunito;
+    font-size: 1rem;
+    font-weight: 700;
     letter-spacing: .2em;
 
     color: var(--primary);
