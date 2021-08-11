@@ -40,7 +40,7 @@ function ListarProdutos(){
       divButtons.classList.add('buttons')
 
       var link = document.createElement('a')
-      link.setAttribute('href','adm-alterar-categoria.html')
+      link.setAttribute('href','adm-alterar-produto.html')
 
       var iconEdit = document.createElement('img')
       iconEdit.setAttribute('src','../assets/icon-edit.svg')
@@ -194,7 +194,7 @@ function AlterarProduto(){
         resposta = JSON.parse(httpRequest.response)
     }
 
-    httpRequest.open('GET', "http://loja.buiar.com/?key=3Tz81Yftd3C&c=produto&t=inserir"+
+    httpRequest.open('GET', "http://loja.buiar.com/?key=3Tz81Yftd3C&c=produto&t=alterar"+
     '&id=' + id_produto +
     '&codigo=' + codigo_produto +
     '&categoria=' + categoria_produto +
