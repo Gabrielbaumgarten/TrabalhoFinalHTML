@@ -58,6 +58,7 @@ body {
   height: 70vh;
 
   margin-top: 10vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,7 +107,7 @@ body {
   border: 2px solid var(--primary);
 }
 
-.conteudo .formulario button {
+.conteudo .formulario > button {
   width: 25%;
   height: 2rem;
 
@@ -131,11 +132,12 @@ body {
   font-weight: bold;
   letter-spacing: 0.2em;
 
-  position: absolute;
-  bottom: 1rem;
+  /* position: absolute; */
+  margin-bottom: 2rem;
+  margin-top: 2rem;
   left: calc(75% / 2);
 }
 
-.conteudo .formulario button:hover {
+.conteudo .formulario > button:hover {
   background: var(--secondary);
 }

@@ -1,4 +1,7 @@
 function ListarCategorias(){
+    var form = document.getElementsByClassName('conteudo')
+    form[0].style.display = 'none'
+
     const httpRequest = new XMLHttpRequest()
     var resposta = ''
 
@@ -20,19 +23,19 @@ function ListarCategorias(){
         
         var divButtons = document.createElement('div')
         divButtons.classList.add('buttons')
-        var link = document.createElement('a')
-        link.setAttribute('href','adm-alterar-categoria.html')
         var iconEdit = document.createElement('img')
         iconEdit.setAttribute('src','../assets/icon-edit.svg')
         iconEdit.setAttribute('alt','Editar')
-        iconEdit.setAttribute('onclick','PreencherId('+ categoria.id +')')
+        //iconEdit.setAttribute('onclick','montaAlterarCategoria('+ parametros +')')
+        iconEdit.addEventListener('click', function() {
+            montaAlterarCategoria(categoria.id, categoria.nome)
+         })
         var iconRemove = document.createElement('img')
         iconRemove.setAttribute('src','../assets/icon-remove.svg')
         iconRemove.setAttribute('alt','Remover')
         iconRemove.setAttribute('onclick','RemoverCategoria('+ categoria.id +')')
 
-        link.appendChild(iconEdit)
-        divButtons.appendChild(link)
+        divButtons.appendChild(iconEdit)
         divButtons.appendChild(iconRemove)
 
         divCategoria.appendChild(p)
@@ -88,7 +91,7 @@ function RemoverCategoria(id){
         }
     })
 
-    if(controle){
+    if(controle && confirm('Tem certeza que deseja remover a categoria?')){
         httpRequest.open('GET', "http://loja.buiar.com/?key=3Tz81Yftd3C&c=categoria&t=remover&id="+ id +"&f=json", false)
         httpRequest.send()
 
@@ -98,28 +101,41 @@ function RemoverCategoria(id){
     }
 }
 
+function PreencheCategoria(id, nome) {
+    var id_categoria = document.getElementById('id_alterar_categoria')
+    var nome_categoria = document.getElementById('nome_alterar_categoria')
+    id_categoria.value= id
+    nome_categoria.value = nome
+}
+
+function montaAlterarCategoria(id, nome) {
+    
+    var form = document.getElementsByClassName('conteudo')
+    form[0].style.display = 'flex'
+    form[0].style.height = '30vh'
+    PreencheCategoria(id, nome)
+}
+
 function AlterarCategoria(){
     const httpRequest = new XMLHttpRequest()
     var resposta = ''
 
-    var nome_categoria = document.getElementById('nome_categoria').value
+    var id = Number(document.getElementById('id_alterar_categoria').value)
+    var nome_categoria = document.getElementById('nome_alterar_categoria').value
 
     httpRequest.onload = () => {
         resposta = JSON.parse(httpRequest.response)
     }
 
-    httpRequest.open('GET', "http://loja.buiar.com/?key=3Tz81Yftd3C&c=categoria&t=alterar&nome="+ nome_categoria +"&f=json", false)
+    httpRequest.open('GET', "http://loja.buiar.com/?key=3Tz81Yftd3C&c=categoria&t=alterar&id="+id+"&nome="+ nome_categoria +"&f=json", false)
     httpRequest.send()
 
 
     if(resposta.status == 'OK'){
-        alert('Categoria criada com sucesso')
+        alert('Categoria alterada com sucesso')
     }
-}
 
-function PreencherId(id){
-    var id_categoria = document.getElementById('id_categoria')
-    id_categoria.value = id
+    window.location.reload()
 }
 
 function ListarCategoriasDropdown(){

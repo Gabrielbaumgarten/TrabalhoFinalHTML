@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/adm-listar-categoria.css">
+    <link rel="stylesheet" href="../css/adm-criar-categoria.css">
     <script src="../js/transicao.js"></script>
     <script src="../js/categorias.js"></script>
 
@@ -47,7 +48,18 @@
         </div>
 
         <div id='lista-categorias' class="lista-categorias">
-            
+            <div class='conteudo' id='alterar_categoria'>
+                <div class='formulario'>
+                    
+                    <label for="id_categoria">Id da Categoria</label>
+                    <input type="text" id='id_alterar_categoria' readonly>
+                    <label for="nome_categoria">Nome da Categoria</label>
+                    <input type="text" id='nome_alterar_categoria'>
+                    
+                    <button onclick="AlterarCategoria()">Alterar</button>
+                </div>
+            </div>  
+
         </div>
         
     </div>
