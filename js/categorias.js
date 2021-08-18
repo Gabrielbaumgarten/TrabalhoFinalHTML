@@ -1,6 +1,6 @@
 function ListarCategorias(){
-    var form = document.getElementsByClassName('conteudo')
-    form[0].style.display = 'none'
+    // var form = document.getElementsByClassName('conteudo')
+    // form[0].style.display = 'none'
 
     const httpRequest = new XMLHttpRequest()
     var resposta = ''
@@ -33,16 +33,59 @@ function ListarCategorias(){
         var iconRemove = document.createElement('img')
         iconRemove.setAttribute('src','../assets/icon-remove.svg')
         iconRemove.setAttribute('alt','Remover')
-        iconRemove.setAttribute('onclick','RemoverCategoria('+ categoria.id +')')
+        iconRemove.setAttribute('onclick',()=>{RemoverCategoria(categoria.id )})
 
         divButtons.appendChild(iconEdit)
         divButtons.appendChild(iconRemove)
 
         divCategoria.appendChild(p)
         divCategoria.appendChild(divButtons)
+
+        var divAlterarCategoria = document.createElement('div')
+        divAlterarCategoria.setAttribute('id', 'alterar_categoria' + categoria.id)
+        divAlterarCategoria.classList.add('conteudo')
+
+        var formulario = document.createElement('div')
+        formulario.classList.add('formulario')
+
+        var labelIdCategoria = document.createElement('label')
+        labelIdCategoria.setAttribute('for','id_categoria')
+        labelIdCategoria.innerHTML = 'Id da Categoria'
+
+        var inputIdCategoria = document.createElement('input')
+        inputIdCategoria.setAttribute('type','text')
+        inputIdCategoria.setAttribute('id','id_alterar_categoria'+categoria.id)
+        inputIdCategoria.setAttribute('readonly','true')
+        
+        var labelNomeCategoria = document.createElement('label')
+        labelNomeCategoria.setAttribute('for','nome_categoria')
+        labelNomeCategoria.innerHTML = 'Nome da Categoria'
+
+        var inputNomeCategoria = document.createElement('input')
+        inputNomeCategoria.setAttribute('type','text')
+        inputNomeCategoria.setAttribute('id','nome_alterar_categoria'+categoria.id)
+        
+        var button = document.createElement('button')
+        button.addEventListener('click', ()=>{AlterarCategoria()})
+        button.innerHTML = 'Alterar'
+
+        formulario.appendChild(labelIdCategoria)
+        formulario.appendChild(inputIdCategoria)
+        formulario.appendChild(labelNomeCategoria)
+        formulario.appendChild(inputNomeCategoria)
+        formulario.appendChild(button)
+
+        divAlterarCategoria.appendChild(formulario)
+        divAlterarCategoria.style.display = 'none'
+
+        var div = document.createElement('div')
+
+        div.appendChild(divCategoria)
+        div.appendChild(divAlterarCategoria)
+        
     
         var divListarCategorias = document.getElementById('lista-categorias')
-        divListarCategorias.appendChild(divCategoria)
+        divListarCategorias.appendChild(div)
     })
 }
 
@@ -102,18 +145,23 @@ function RemoverCategoria(id){
 }
 
 function PreencheCategoria(id, nome) {
-    var id_categoria = document.getElementById('id_alterar_categoria')
-    var nome_categoria = document.getElementById('nome_alterar_categoria')
+    var id_categoria = document.getElementById('id_alterar_categoria'+id)
+    var nome_categoria = document.getElementById('nome_alterar_categoria'+id)
     id_categoria.value= id
     nome_categoria.value = nome
 }
 
 function montaAlterarCategoria(id, nome) {
-    
-    var form = document.getElementsByClassName('conteudo')
-    form[0].style.display = 'flex'
-    form[0].style.height = '30vh'
-    PreencheCategoria(id, nome)
+
+    var div = document.getElementById('alterar_categoria'+id)
+
+    if(div.style.display == 'none'){
+        div.style.display = 'flex'
+        div.style.height = 'fit-content'
+        PreencheCategoria(id, nome)
+    } else{
+        div.style.display = 'none'
+    }
 }
 
 function AlterarCategoria(){
