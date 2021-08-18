@@ -42,7 +42,7 @@ function ListarProdutos(){
       var iconEdit = document.createElement('img')
       iconEdit.setAttribute('src','../assets/icon-edit.svg')
       iconEdit.setAttribute('alt','Editar')
-      iconEdit.addEventListener('click',()=>{MontarAlterarProduto(produto.id, produto.categoria, produto.nome, produto.codigo, produto.preco)})
+      iconEdit.addEventListener('click',()=>{MontarAlterarProduto(produto.id, produto.categoria, produto.nome, produto.codigo, produto.preco, produto.descricao, produto.imagem, produto.peso)})
 
       var iconRemove = document.createElement('img')
       iconRemove.setAttribute('src','../assets/icon-remove.svg')
@@ -87,6 +87,22 @@ function ListarProdutos(){
       inputNomeProduto.setAttribute('type','text')
       inputNomeProduto.setAttribute('id','nome_alterar_produto'+produto.id)
 
+      var labelDescricaoProduto = document.createElement('label')
+      labelDescricaoProduto.setAttribute('for','descricao_produto')
+      labelDescricaoProduto.innerHTML = 'Descricao da Produto'
+
+      var inputDescricaoProduto = document.createElement('input')
+      inputDescricaoProduto.setAttribute('type','text')
+      inputDescricaoProduto.setAttribute('id','descricao_alterar_produto'+produto.id)
+
+      var labelImagemProduto = document.createElement('label')
+      labelImagemProduto.setAttribute('for','imagem_produto')
+      labelImagemProduto.innerHTML = 'Imagem da Produto'
+
+      var inputImagemProduto = document.createElement('input')
+      inputImagemProduto.setAttribute('type','text')
+      inputImagemProduto.setAttribute('id','imagem_alterar_produto'+produto.id)
+
       var labelCategoriaProduto = document.createElement('label')
       labelCategoriaProduto.setAttribute('for','categoria_produto')
       labelCategoriaProduto.innerHTML = 'Categoria'
@@ -122,21 +138,43 @@ function ListarProdutos(){
       var inputPrecoProduto = document.createElement('input')
       inputPrecoProduto.setAttribute('type','text')
       inputPrecoProduto.setAttribute('id','preco_alterar_produto'+produto.id)
+
+      var labelPesoProduto = document.createElement('label')
+      labelPesoProduto.setAttribute('for','peso_produto')
+      labelPesoProduto.innerHTML = 'Peso da Produto'
+
+      var inputPesoProduto = document.createElement('input')
+      inputPesoProduto.setAttribute('type','text')
+      inputPesoProduto.setAttribute('id','peso_alterar_produto'+produto.id)
       
       var button = document.createElement('button')
-      button.addEventListener('click', ()=>{AlterarProduto()})
+      button.addEventListener('click', ()=>{AlterarProduto(produto.id)})
       button.innerHTML = 'Alterar'
 
       formulario.appendChild(labelIdProduto)
       formulario.appendChild(inputIdProduto)
+
       formulario.appendChild(labelNomeProduto)
       formulario.appendChild(inputNomeProduto)
+
+      formulario.appendChild(labelDescricaoProduto)
+      formulario.appendChild(inputDescricaoProduto)
+
       formulario.appendChild(labelCategoriaProduto)
       formulario.appendChild(dropdown)
+
       formulario.appendChild(labelCodigoProduto)
       formulario.appendChild(inputCodigoProduto)
+
+      formulario.appendChild(labelImagemProduto)
+      formulario.appendChild(inputImagemProduto)
+
       formulario.appendChild(labelPrecoProduto)
       formulario.appendChild(inputPrecoProduto)
+
+      formulario.appendChild(labelPesoProduto)
+      formulario.appendChild(inputPesoProduto)
+
       formulario.appendChild(button)
 
       divAlterarProduto.appendChild(formulario)
@@ -248,41 +286,47 @@ function CriarProduto(){
         window.location.replace('adm-listar-produtos.html')
     }
 }
-function PreencheProduto(id, categoria, nome, codigo, preco) {
+function PreencheProduto(id, categoria, nome, codigo, preco, descricao, imagem, peso) {
   var id_produto = document.getElementById('id_alterar_produto'+id)
   var nome_produto = document.getElementById('nome_alterar_produto'+id)
   var categoria_produto = document.getElementById('categoria_alterar_produto'+id)
   var codigo_produto = document.getElementById('codigo_alterar_produto'+id)
   var preco_produto = document.getElementById('preco_alterar_produto'+id)
+  var descricao_produto = document.getElementById('descricao_alterar_produto'+id)
+  var imagem_produto = document.getElementById('imagem_alterar_produto'+id)
+  var peso_produto = document.getElementById('peso_alterar_produto'+id)
   id_produto.value= id
   nome_produto.value = nome
   categoria_produto.innerHTML = categoria
   codigo_produto.value = codigo
   preco_produto.value = preco
+  descricao_produto.value = descricao
+  imagem_produto.value = imagem
+  peso_produto.value = peso
 }
 
-function MontarAlterarProduto(id, categoria, nome, codigo, preco) {
+function MontarAlterarProduto(id, categoria, nome, codigo, preco, descricao, imagem, peso) {
 
   var div = document.getElementById('alterar_produto'+id)
 
   if(div.style.display == 'none'){
       div.style.display = 'flex'
       div.style.height = 'fit-content'
-      PreencheProduto(id, categoria, nome, codigo, preco)
+      PreencheProduto(id, categoria, nome, codigo, preco, descricao, imagem, peso)
   } else{
       div.style.display = 'none'
   }
 }
-function AlterarProduto(){
+function AlterarProduto(id){
   const httpRequest = new XMLHttpRequest()
     var resposta = ''
 
-    var id_produto = document.getElementById('id_produto').value
-    var codigo_produto = document.getElementById('codigo_produto').value
-    var nome_produto = document.getElementById('nome_produto').value
-    var categoria_produto = document.getElementById('dropdown-button').innerHTML
+    var id_produto = document.getElementById('id_alterar_produto'+id).value
+    var codigo_produto = document.getElementById('codigo_alterar_produto'+id).value
+    var nome_produto = document.getElementById('nome_alterar_produto'+id).value
+    var categoria_produto = document.getElementById('categoria_alterar_produto'+id).innerHTML
     var descricao_produto = document.getElementById('descricao_produto').value
-    var preco_produto = document.getElementById('preco_produto').value
+    var preco_produto = document.getElementById('preco_alterar_produto'+id).value
     var img_produto = document.getElementById('img_produto').value
     var peso_produto = document.getElementById('peso_produto').value
 
