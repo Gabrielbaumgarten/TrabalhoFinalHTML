@@ -33,7 +33,7 @@ function ListarCategorias(){
         var iconRemove = document.createElement('img')
         iconRemove.setAttribute('src','../assets/icon-remove.svg')
         iconRemove.setAttribute('alt','Remover')
-        iconRemove.setAttribute('onclick',()=>{RemoverCategoria(categoria.id )})
+        iconRemove.addEventListener('click',()=>{RemoverCategoria(categoria.id )})
 
         divButtons.appendChild(iconEdit)
         divButtons.appendChild(iconRemove)

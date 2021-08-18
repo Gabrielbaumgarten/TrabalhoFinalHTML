@@ -39,20 +39,17 @@ function ListarProdutos(){
       var divButtons = document.createElement('div')
       divButtons.classList.add('buttons')
 
-      var link = document.createElement('a')
-      link.setAttribute('href','adm-alterar-produto.html')
-
       var iconEdit = document.createElement('img')
       iconEdit.setAttribute('src','../assets/icon-edit.svg')
       iconEdit.setAttribute('alt','Editar')
+      iconEdit.addEventListener('click',()=>{MontarAlterarProduto(produto.id, produto.categoria, produto.nome, produto.codigo, produto.preco)})
 
       var iconRemove = document.createElement('img')
       iconRemove.setAttribute('src','../assets/icon-remove.svg')
       iconRemove.setAttribute('alt','Remover')
-      iconRemove.setAttribute('onclick','RemoverProduto('+ produto.id +')')
+      iconRemove.addEventListener('click',()=>{RemoverProduto(produto.id)})
 
-      link.appendChild(iconEdit)
-      divButtons.appendChild(link)
+      divButtons.appendChild(iconEdit)
       divButtons.appendChild(iconRemove)
 
       divProduto.appendChild(p_id)
@@ -62,9 +59,101 @@ function ListarProdutos(){
       divProduto.appendChild(p_codigo)
       divProduto.appendChild(p_preco)
       divProduto.appendChild(divButtons)
+
+
+
+
+      var divAlterarProduto = document.createElement('div')
+      divAlterarProduto.setAttribute('id', 'alterar_produto' + produto.id)
+      divAlterarProduto.classList.add('conteudo')
+
+      var formulario = document.createElement('div')
+      formulario.classList.add('formulario')
+
+      var labelIdProduto = document.createElement('label')
+      labelIdProduto.setAttribute('for','id_produto')
+      labelIdProduto.innerHTML = 'Id da Produto'
+
+      var inputIdProduto = document.createElement('input')
+      inputIdProduto.setAttribute('type','text')
+      inputIdProduto.setAttribute('id','id_alterar_produto'+produto.id)
+      inputIdProduto.setAttribute('readonly','true')
+      
+      var labelNomeProduto = document.createElement('label')
+      labelNomeProduto.setAttribute('for','nome_produto')
+      labelNomeProduto.innerHTML = 'Nome da Produto'
+
+      var inputNomeProduto = document.createElement('input')
+      inputNomeProduto.setAttribute('type','text')
+      inputNomeProduto.setAttribute('id','nome_alterar_produto'+produto.id)
+
+      var labelCategoriaProduto = document.createElement('label')
+      labelCategoriaProduto.setAttribute('for','categoria_produto')
+      labelCategoriaProduto.innerHTML = 'Categoria'
+
+      var dropdown = document.createElement('div')
+      dropdown.classList.add('dropdown')
+
+      var buttonDropdown = document.createElement('button')
+      buttonDropdown.setAttribute('id','categoria_alterar_produto'+produto.id)
+      buttonDropdown.addEventListener('click', ()=>{dropdownFunction(produto.id)})
+      buttonDropdown.classList.add('dropbtn')
+
+      var divDropdown = document.createElement('div')
+      divDropdown.setAttribute('id','myDropdown'+produto.id)
+      divDropdown.classList.add('dropdown-content')
+
+      dropdown.appendChild(buttonDropdown)
+      dropdown.appendChild(divDropdown)
+
+
+      var labelCodigoProduto = document.createElement('label')
+      labelCodigoProduto.setAttribute('for','codigo_produto')
+      labelCodigoProduto.innerHTML = 'Código da Produto'
+
+      var inputCodigoProduto = document.createElement('input')
+      inputCodigoProduto.setAttribute('type','text')
+      inputCodigoProduto.setAttribute('id','codigo_alterar_produto'+produto.id)
+
+      var labelPrecoProduto = document.createElement('label')
+      labelPrecoProduto.setAttribute('for','preco_produto')
+      labelPrecoProduto.innerHTML = 'Preço da Produto'
+
+      var inputPrecoProduto = document.createElement('input')
+      inputPrecoProduto.setAttribute('type','text')
+      inputPrecoProduto.setAttribute('id','preco_alterar_produto'+produto.id)
+      
+      var button = document.createElement('button')
+      button.addEventListener('click', ()=>{AlterarProduto()})
+      button.innerHTML = 'Alterar'
+
+      formulario.appendChild(labelIdProduto)
+      formulario.appendChild(inputIdProduto)
+      formulario.appendChild(labelNomeProduto)
+      formulario.appendChild(inputNomeProduto)
+      formulario.appendChild(labelCategoriaProduto)
+      formulario.appendChild(dropdown)
+      formulario.appendChild(labelCodigoProduto)
+      formulario.appendChild(inputCodigoProduto)
+      formulario.appendChild(labelPrecoProduto)
+      formulario.appendChild(inputPrecoProduto)
+      formulario.appendChild(button)
+
+      divAlterarProduto.appendChild(formulario)
+      divAlterarProduto.style.display = 'none'
+
+      var div = document.createElement('div')
+
+      div.appendChild(divProduto)
+      div.appendChild(divAlterarProduto)
+        
+
   
       var divListarProdutos = document.getElementById('lista-produtos')
-      divListarProdutos.appendChild(divProduto)
+      divListarProdutos.appendChild(div)
+
+      
+      ListarCategoriasDropdown(produto.id)
     })
 }
 
@@ -159,7 +248,31 @@ function CriarProduto(){
         window.location.replace('adm-listar-produtos.html')
     }
 }
+function PreencheProduto(id, categoria, nome, codigo, preco) {
+  var id_produto = document.getElementById('id_alterar_produto'+id)
+  var nome_produto = document.getElementById('nome_alterar_produto'+id)
+  var categoria_produto = document.getElementById('categoria_alterar_produto'+id)
+  var codigo_produto = document.getElementById('codigo_alterar_produto'+id)
+  var preco_produto = document.getElementById('preco_alterar_produto'+id)
+  id_produto.value= id
+  nome_produto.value = nome
+  categoria_produto.innerHTML = categoria
+  codigo_produto.value = codigo
+  preco_produto.value = preco
+}
 
+function MontarAlterarProduto(id, categoria, nome, codigo, preco) {
+
+  var div = document.getElementById('alterar_produto'+id)
+
+  if(div.style.display == 'none'){
+      div.style.display = 'flex'
+      div.style.height = 'fit-content'
+      PreencheProduto(id, categoria, nome, codigo, preco)
+  } else{
+      div.style.display = 'none'
+  }
+}
 function AlterarProduto(){
   const httpRequest = new XMLHttpRequest()
     var resposta = ''
@@ -211,5 +324,58 @@ function AlterarProduto(){
         alert('Produto alterado com sucesso')
 
         window.location.replace('adm-listar-produtos.html')
+    }
+}
+
+function dropdownFunction(id) {
+  document.getElementById("myDropdown"+id).classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+function ListarCategoriasDropdown(id){
+  const httpRequest = new XMLHttpRequest()
+  var resposta = ''
+
+  httpRequest.onload = () => {
+      resposta = JSON.parse(httpRequest.response)
+  }
+
+  httpRequest.open('GET', 'http://loja.buiar.com/?key=3Tz81Yftd3C&c=categoria&t=listar&f=json', false)
+  httpRequest.send()
+
+  resposta.dados.forEach( categoria =>{
+      var p = document.createElement('p')
+      p.innerHTML = categoria.nome
+
+      p.addEventListener('click',()=>{SelecionarCategoria(id, categoria.nome)})
+
+      document.getElementById('myDropdown'+id).appendChild(p)
+  })
+}
+
+function SelecionarCategoria(id,nome){
+  var dropdownButton = document.getElementById('categoria_alterar_produto'+id)
+  dropdownButton.innerHTML = nome
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
     }
 }
