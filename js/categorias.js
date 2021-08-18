@@ -1,7 +1,4 @@
 function ListarCategorias(){
-    // var form = document.getElementsByClassName('conteudo')
-    // form[0].style.display = 'none'
-
     const httpRequest = new XMLHttpRequest()
     var resposta = ''
 
@@ -212,4 +209,109 @@ function SelecionarCategoria(nome){
     console.log('Aqui')
     var dropdownButton = document.getElementById('dropdown-button')
     dropdownButton.innerHTML = nome
+}
+
+function CarregarPaginaCategorias(){
+    const httpRequest = new XMLHttpRequest()
+    var resposta = ''
+
+    httpRequest.onload = () => {
+        resposta = JSON.parse(httpRequest.response)
+    }
+
+    httpRequest.open('GET', 'http://loja.buiar.com/?key=3Tz81Yftd3C&c=categoria&t=listar&f=json', false)
+    httpRequest.send()
+
+    resposta.dados.forEach( categoria => {
+
+        var divCategoria = document.createElement('div')
+        divCategoria.classList.add('categoria')
+
+        // definição da imagem de fundo
+        var divImagem = document.createElement('div')
+        divImagem.classList.add('bg-img')
+
+        var imagem = new Image()
+        if(categoria.nome.toLowerCase() == 'óculos de sol'){
+            imagem.src = '../assets/oculosdesol.png' 
+        } else if(categoria.nome.toLowerCase() == 'óculos de grau'){
+            imagem.src = '../assets/oculosdegrau.png'
+        } else if(categoria.nome.toLowerCase() == 'lentes de contato'){
+            imagem.src = '../assets/lentes.png'
+        }
+
+        divImagem.appendChild(imagem)
+
+        // Criação do icone
+        var icon = new Image()
+        if(categoria.nome.toLowerCase() == 'óculos de sol'){
+            icon.src = '../assets/icon-oculos-sol.svg'
+            icon.alt = 'Óculos de sol' 
+        } else if(categoria.nome.toLowerCase() == 'óculos de grau'){
+            icon.src = '../assets/icon-oculos-grau.svg'
+            icon.alt = 'Óculos de grau'
+        } else if(categoria.nome.toLowerCase() == 'lentes de contato'){
+            icon.src = '../assets/icon-lentes.svg'
+            icon.alt = 'Lentes de Contato'
+        }
+
+        // Criação do Título
+        var titulo = document.createElement('h1')
+        titulo.innerHTML = categoria.nome
+
+        // Criação Sub-título
+        var subtitulo = document.createElement('p')
+        if(categoria.nome.toLowerCase() == 'óculos de sol'){
+            subtitulo.innerHTML = 'Sunglasses'
+        }else if(categoria.nome.toLowerCase() == 'óculos de grau'){
+            subtitulo.innerHTML = 'Glasses'
+        } else if(categoria.nome.toLowerCase() == 'lentes de contato'){
+            subtitulo.innerHTML = 'Contact lenses'
+        }
+
+        // Criação da descrição
+        var divDescricao = document.createElement('div')
+        var descricao = document.createElement('p')
+        descricao.classList.add('descricao')
+        if(categoria.nome.toLowerCase() == 'óculos de sol'){
+            descricao.innerHTML = 'Descubra nossas diversas opções de marcas e modelos'
+        }else if(categoria.nome.toLowerCase() == 'óculos de grau'){
+            descricao.innerHTML = 'Descubra nossas diversas opções de marcas e modelos'
+        } else if(categoria.nome.toLowerCase() == 'lentes de contato'){
+            descricao.innerHTML = 'Descubra nossas diversas opções de marcas e modelos'
+        }
+
+
+        divDescricao.appendChild(descricao)
+
+        // Criação do botão
+        var button = document.createElement('button')
+        var text = document.createElement('p')
+        text.innerHTML = 'Conhecer'
+
+        const iconSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        const iconSvgPath = document.createElementNS('http://www.w3.org/2000/svg','path');
+               
+        iconSvg.setAttribute('width',"15")
+        iconSvg.setAttribute('height',"20")
+        iconSvg.setAttribute('viewBox',"0 0 15 20")
+        iconSvg.setAttribute('fill',"none")
+
+        iconSvgPath.setAttribute('d','M0.536 19.8857C0.697765 19.9698 0.879391 20.0083 1.06138 19.997C1.24337 19.9858 1.41886 19.9251 1.569 19.8217L14.569 10.8217C14.7018 10.7296 14.8104 10.6068 14.8854 10.4636C14.9603 10.3205 14.9995 10.1613 14.9995 9.99966C14.9995 9.83806 14.9603 9.67886 14.8854 9.53571C14.8104 9.39255 14.7018 9.26969 14.569 9.17766L1.569 0.177663C1.41897 0.0738554 1.24341 0.0130678 1.06131 0.00188176C0.879219 -0.00930423 0.697533 0.0295378 0.53593 0.114202C0.374326 0.198866 0.238963 0.326126 0.144497 0.482203C0.0500308 0.638279 6.15833e-05 0.817225 1.35831e-08 0.999663V18.9997C-3.00674e-05 19.1822 0.0499031 19.3613 0.144387 19.5174C0.238871 19.6736 0.374302 19.801 0.536 19.8857Z')
+        iconSvgPath.setAttribute('fill','#736862')
+
+        iconSvg.appendChild(iconSvgPath)
+
+        button.appendChild(text)
+        button.appendChild(iconSvg)
+
+        divCategoria.appendChild(divImagem)
+        divCategoria.appendChild(icon)
+        divCategoria.appendChild(titulo)
+        divCategoria.appendChild(subtitulo)
+        divCategoria.appendChild(divDescricao)
+        divCategoria.appendChild(button)
+
+        document.getElementById('categorias').appendChild(divCategoria)
+    })
 }
