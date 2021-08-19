@@ -229,6 +229,7 @@ function CarregarPaginaCategorias(){
 
         var divCategoria = document.createElement('div')
         divCategoria.classList.add('categoria')
+        divCategoria.addEventListener('click', ()=>{MudarPagina('mostruario.html')})
 
         // definição da imagem de fundo
         var divImagem = document.createElement('div')
