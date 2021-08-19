@@ -104,6 +104,8 @@ body{
 
     overflow: hidden;
     transition: .7s ease-in;
+
+    cursor: pointer;
 }
 
 
