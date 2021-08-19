@@ -131,13 +131,16 @@ function RemoverCategoria(id){
         }
     })
 
-    if(controle && confirm('Tem certeza que deseja remover a categoria?')){
-        httpRequest.open('GET', "http://loja.buiar.com/?key=3Tz81Yftd3C&c=categoria&t=remover&id="+ id +"&f=json", false)
-        httpRequest.send()
+    if (confirm('Tem certeza que deseja remover a categoria?')) {
+        if (controle) {
 
-        window.location.reload()
-    } else{
-        alert('Não foi possível remover a categoria, pois há produtos dentro dela!')
+            httpRequest.open('GET', "http://loja.buiar.com/?key=3Tz81Yftd3C&c=categoria&t=remover&id=" + id + "&f=json", false)
+            httpRequest.send()
+
+            window.location.reload()
+        } else {
+            alert('Não foi possível remover a categoria, pois há produtos dentro dela!')
+        }
     }
 }
 

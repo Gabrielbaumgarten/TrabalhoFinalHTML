@@ -72,7 +72,7 @@ function ListarProdutos(){
 
       var labelIdProduto = document.createElement('label')
       labelIdProduto.setAttribute('for','id_produto')
-      labelIdProduto.innerHTML = 'Id da Produto'
+      labelIdProduto.innerHTML = 'Id do Produto'
 
       var inputIdProduto = document.createElement('input')
       inputIdProduto.setAttribute('type','text')
@@ -81,7 +81,7 @@ function ListarProdutos(){
       
       var labelNomeProduto = document.createElement('label')
       labelNomeProduto.setAttribute('for','nome_produto')
-      labelNomeProduto.innerHTML = 'Nome da Produto'
+      labelNomeProduto.innerHTML = 'Nome do Produto'
 
       var inputNomeProduto = document.createElement('input')
       inputNomeProduto.setAttribute('type','text')
@@ -89,7 +89,7 @@ function ListarProdutos(){
 
       var labelDescricaoProduto = document.createElement('label')
       labelDescricaoProduto.setAttribute('for','descricao_produto')
-      labelDescricaoProduto.innerHTML = 'Descricao da Produto'
+      labelDescricaoProduto.innerHTML = 'Descrição do Produto'
 
       var inputDescricaoProduto = document.createElement('input')
       inputDescricaoProduto.setAttribute('type','text')
@@ -97,7 +97,7 @@ function ListarProdutos(){
 
       var labelImagemProduto = document.createElement('label')
       labelImagemProduto.setAttribute('for','imagem_produto')
-      labelImagemProduto.innerHTML = 'Imagem da Produto'
+      labelImagemProduto.innerHTML = 'Imagem do Produto'
 
       var inputImagemProduto = document.createElement('input')
       inputImagemProduto.setAttribute('type','text')
@@ -125,7 +125,7 @@ function ListarProdutos(){
 
       var labelCodigoProduto = document.createElement('label')
       labelCodigoProduto.setAttribute('for','codigo_produto')
-      labelCodigoProduto.innerHTML = 'Código da Produto'
+      labelCodigoProduto.innerHTML = 'Código do Produto'
 
       var inputCodigoProduto = document.createElement('input')
       inputCodigoProduto.setAttribute('type','text')
@@ -133,7 +133,7 @@ function ListarProdutos(){
 
       var labelPrecoProduto = document.createElement('label')
       labelPrecoProduto.setAttribute('for','preco_produto')
-      labelPrecoProduto.innerHTML = 'Preço da Produto'
+      labelPrecoProduto.innerHTML = 'Preço do Produto'
 
       var inputPrecoProduto = document.createElement('input')
       inputPrecoProduto.setAttribute('type','text')
@@ -141,7 +141,7 @@ function ListarProdutos(){
 
       var labelPesoProduto = document.createElement('label')
       labelPesoProduto.setAttribute('for','peso_produto')
-      labelPesoProduto.innerHTML = 'Peso da Produto'
+      labelPesoProduto.innerHTML = 'Peso do Produto'
 
       var inputPesoProduto = document.createElement('input')
       inputPesoProduto.setAttribute('type','text')
