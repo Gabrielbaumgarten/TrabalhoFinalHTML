@@ -17,10 +17,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <script src="../js/produtos.js"></script>
     <title>Categorias</title>
 </head>
-<body>
+<body onload="OrdenarProdutos()">
   <div class='overlay'></div>
 
   <div class="top-bar">
@@ -48,32 +48,18 @@
       <a href="../paginas/produtos.html">Óculos de Sol</a>
   </div>
 
-  <div class=opcoesProdutos>
+  <div class=opcoesProdutos id='opcoesProdutos'>
 
-    <div class="prod1" draggable="true" ondragstart="Drag(event)" onclick="window.location.href = '../paginas/adm-criar-categoria.html'">
-        <p>Produto1</p>
-    </div>
-
-    <div class="prod2" onclick="window.location.href = '../paginas/adm-listar-categoria.html'">
-        <img src="../assets/icon-list.svg">
-        <a href="../paginas/adm-listar-categoria.html">Ray-Ban </a>
-    </div>
-
-    <div class="prod3" onclick="window.location.href = '../paginas/adm-alterar-categoria.html'">
-        <img src="../assets/icon-alter.svg">
-        <a href="../paginas/adm-alterar-categoria.html">Ray-Ban </a>
-    </div>
-
-    <div class="prod4" onclick="window.location.href = '../paginas/adm-listar-categoria.html'">
-        <img src="../assets/icon-remove.svg">
-        <a href="../paginas/adm-listar-categoria.html">Ray-Ban </a>
-    </div>
-
-    <div class="prod5" onclick="window.location.href = '../paginas/adm-listar-categoria.html'">
-      <img src="../assets/icon-remove.svg">
-      <a href="../paginas/adm-listar-categoria.html">Ray-Ban </a>
+    <div class="prod1">
+      <div class="esquerda">
+        <img src="../assets/oculosdesol.png">
+        <p class="preco">R$ 400,00</p>
+      </div>
+      <div class="direita">
+        <p class="titulo">Ray Ban</p>
+        <p class="descricao">Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada </p>
+      </div>
     </div>
   </div>
-    
 </body>
 </html>

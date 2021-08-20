@@ -42,19 +42,12 @@ body {
 }
 
 .tituloProdutos {
-  position: absolute;
-  width: 42%;
-  height: 4%;
-  left: 5%;
-  top: 20%;
-}
-
-.tituloProdutos {
-  position: absolute;
-  width: 42%;
-  height: 4%;
-  left: 5%;
-  top: 20%;
+  display: flex;
+  width: 100%;
+  height: 10vh;
+  margin-top: 2%;
+  margin-left: 5%;
+  overflow-x: hidden;
 }
 
 .tituloProdutos a {
@@ -69,54 +62,64 @@ body {
   color: var(--primary);
 }
 
+.opcoesProdutos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70vh;
+}
+
 .opcoesProdutos .prod1 {
-  position: absolute;
-  width: 617px;
-  height: 335px;
-  left: 186px;
-  top: 349px;
-
+  display: flex;
   background: rgba(121, 111, 105, 0.1);
+  width: 70%;
+  height: 30%;
+  justify-content: center;
 }
 
-.opcoesProdutos .prod2 {
-  position: absolute;
-  width: 394px;
-  height: 163px;
-  left: 819px;
-  top: 349px;
-
-  background: rgba(121, 111, 105, 0.1);
+.opcoesProdutos .prod1 .esquerda{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.opcoesProdutos .prod3 {
-  position: absolute;
-  width: 394px;
-  height: 163px;
-  left: 819px;
-  top: 522px;
-
-  background: rgba(121, 111, 105, 0.1);
+.opcoesProdutos .prod1 .direita{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.opcoesProdutos .prod4 {
-  position: absolute;
-  width: 421px;
-  height: 163px;
-  left: 187px;
-  top: 699px;
-
-  background: rgba(121, 111, 105, 0.1);
+.opcoesProdutos .prod1 img{
+  height: 40%;
+  margin-left: 10%;
+}
+.opcoesProdutos .prod1 .preco{
+  font-size: 300%;
+  font-family: Nunito;
+  font-weight: bold;
+  color: var(--secondary);
+  margin-top: 5%;
 }
 
-.opcoesProdutos .prod5 {
-  position: absolute;
-  width: 589px;
-  height: 162px;
-  left: 624px;
-  top: 699px;
+.opcoesProdutos .prod1 .descricao{
+  font-size: 300%;
+  font-family: Nunito;
+  color: var(--secondary);
+  width: 90%;
+  overflow: hidden;
+}
 
-  background: rgba(121, 111, 105, 0.1);
+.opcoesProdutos .prod1 .titulo{
+  font-size: 300%;
+  font-family: Nunito;
 }
 
 .opcoesProdutos .prod1:hover,

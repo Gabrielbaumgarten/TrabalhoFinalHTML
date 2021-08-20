@@ -423,3 +423,54 @@ function SelecionarCategoria(id,nome){
       }
     }
 }
+
+function OrdenarProdutos(){
+  const httpRequest = new XMLHttpRequest()
+  var resposta = ''
+
+  httpRequest.onload = () => {
+      resposta = JSON.parse(httpRequest.response)
+  }
+
+  httpRequest.open('GET', 'http://loja.buiar.com/?key=3Tz81Yftd3C&c=produto&t=listar&f=json', false)
+  httpRequest.send()
+  
+  resposta.dados.forEach(produto =>{
+    var divProduto = document.createElement('div')
+    divProduto.classList.add('prod1')
+
+    var divEsquerda = document.createElement('div')
+    divEsquerda.classList.add('esquerda')
+
+    var divDireita = document.createElement('div')
+    divDireita.classList.add('direita')
+
+    var imagem = new Image()
+    imagem.src = produto.imagem + '/img01.png'
+
+    var preco = document.createElement('p')
+    preco.innerHTML = produto.preco
+    preco.classList.add('preco')
+
+    var titulo = document.createElement('p')
+    titulo.innerHTML = produto.nome
+    titulo.classList.add('titulo')
+
+    var descricao = document.createElement('p')
+    descricao.innerHTML = produto.descricao
+    descricao.classList.add('descricao')
+
+    divEsquerda.appendChild(imagem)
+    divEsquerda.appendChild(preco)
+
+    divEsquerda.appendChild(titulo)
+    divEsquerda.appendChild(descricao)
+
+    divProduto.appendChild(divEsquerda)
+    divProduto.appendChild(divDireita)
+
+    var divOpcoesProdutos = document.getElementById('opcoesProdutos')
+
+    divOpcoesProdutos.appendChild(divProduto)
+  })
+}
