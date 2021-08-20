@@ -29,9 +29,16 @@ body {
   padding-left: 3vw;
 }
 
+.top-bar .carrinho{
+  cursor: pointer;
+}
+
 .top-bar .icon-menu svg {
   width: 2rem;
-  padding-right: 4vw;
+  margin-right: 4vw;
+  margin-left: 2vw;
+
+  cursor: pointer;
 }
 
 .tituloProdutos {

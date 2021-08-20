@@ -1,0 +1,16 @@
+{
+  "carrinho": [
+    {
+      "nome": "Gabriel",
+      "id": 1
+    },
+    {
+      "nome": "Maná",
+      "id": 2
+    },
+    {
+      "nome": "Drop",
+      "id": 3
+    }
+  ]
+}
