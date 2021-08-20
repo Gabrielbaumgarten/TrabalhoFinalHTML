@@ -195,26 +195,6 @@ function ListarProdutos(){
     })
 }
 
- const httpRequest = new XMLHttpRequest()
-    var resposta = ''
-
-
-    httpRequest.onload = () => {
-        resposta = JSON.parse(httpRequest.response)
-    }
-
-    httpRequest.open('GET', "http://loja.buiar.com/?key=3Tz81Yftd3C&c=produto&t=listar&f=json", false)
-    httpRequest.send()
-
-    var controle = true
-
-    resposta.dados.forEach( produto =>{
-        if(produto.categoria == id){
-            controle = false
-            return
-        }
-    })
-
 function RemoverProduto(id) {
   const httpRequest = new XMLHttpRequest()
   var resposta = ''
@@ -438,6 +418,10 @@ function OrdenarProdutos(){
   resposta.dados.forEach(produto =>{
     var divProduto = document.createElement('div')
     divProduto.classList.add('prod1')
+    divProduto.setAttribute('draggable','true')
+    divProduto.setAttribute('ondragstart', 'Drag(event)')
+    divProduto.setAttribute('ondblclick', 'AdicionarNoCarrinhoDoubleClick(event)')
+
 
     var divEsquerda = document.createElement('div')
     divEsquerda.classList.add('esquerda')
@@ -445,11 +429,15 @@ function OrdenarProdutos(){
     var divDireita = document.createElement('div')
     divDireita.classList.add('direita')
 
+    var id = document.createElement('p')
+    id.innerHTML = produto.id
+    id.style.display = 'none'
+
     var imagem = new Image()
-    imagem.src = produto.imagem + '/img01.png'
+    imagem.src = '../assets/'+ produto.imagem + '/img01.png'
 
     var preco = document.createElement('p')
-    preco.innerHTML = produto.preco
+    preco.innerHTML = 'R$ ' + produto.preco.split('.')[0] + ',' + produto.preco.split('.')[1]
     preco.classList.add('preco')
 
     var titulo = document.createElement('p')
@@ -463,11 +451,12 @@ function OrdenarProdutos(){
     divEsquerda.appendChild(imagem)
     divEsquerda.appendChild(preco)
 
-    divEsquerda.appendChild(titulo)
-    divEsquerda.appendChild(descricao)
+    divDireita.appendChild(titulo)
+    divDireita.appendChild(descricao)
 
     divProduto.appendChild(divEsquerda)
     divProduto.appendChild(divDireita)
+    divProduto.appendChild(id)
 
     var divOpcoesProdutos = document.getElementById('opcoesProdutos')
 

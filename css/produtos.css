@@ -43,7 +43,7 @@ body {
 
 .tituloProdutos {
   display: flex;
-  width: 100%;
+  width: 95%;
   height: 10vh;
   margin-top: 2%;
   margin-left: 5%;
@@ -77,6 +77,10 @@ body {
   width: 70%;
   height: 30%;
   justify-content: center;
+
+  margin-bottom: 1.5rem;
+
+  transition: .7s ease-in;
 }
 
 .opcoesProdutos .prod1 .esquerda{
@@ -113,13 +117,22 @@ body {
   font-size: 300%;
   font-family: Nunito;
   color: var(--secondary);
-  width: 90%;
+  width: 80%;
+  height: calc(80% - 1rem);
+
+  margin-bottom: 1rem;
+
   overflow: hidden;
 }
 
 .opcoesProdutos .prod1 .titulo{
-  font-size: 300%;
+  font-size: 1.5rem;
+  font-weight: bold;
   font-family: Nunito;
+  letter-spacing: .1em;
+
+  color: var(--primary);
+  margin-top: 1rem;
 }
 
 .opcoesProdutos .prod1:hover,

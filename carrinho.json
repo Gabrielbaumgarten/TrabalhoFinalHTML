@@ -1,15 +1,36 @@
 {
   "carrinho": [
     {
-      "nome": "Gabriel",
+      "produto_id": "500",
+      "codigo": "123",
+      "categoria": "83",
+      "nome": "HEXAGONAL FLAT LENSES",
+      "descricao": "O que você obtém quando cruza um círculo com um quadrado? Os RB3548N hexagonais, obvio! A evolução do formato arredondado com lentes planas em cristal. Lentes planas em formato arredondado, em matéria de lentes não é preciso acrescentar mais nada. A armação hexagonal em metal apresenta perfis notáveis e lentes planas em cristal, montadas em uma armação dourada clássica com hastes muito finas. Misturar e combinar opções de cores básicas degradê para criar uma união perfeita. Experimente a emoção de usar um clássico reinterpretado que nunca lhe fará sentir fora do lugar.",
+      "preco": "780.00",
+      "imagem": "Produtos/oculos_de_sol/hexagonal_flat_lenses",
+      "peso": "0.1",
       "id": 1
     },
     {
-      "nome": "Maná",
+      "produto_id": "500",
+      "codigo": "123",
+      "categoria": "83",
+      "nome": "HEXAGONAL FLAT LENSES",
+      "descricao": "O que você obtém quando cruza um círculo com um quadrado? Os RB3548N hexagonais, obvio! A evolução do formato arredondado com lentes planas em cristal. Lentes planas em formato arredondado, em matéria de lentes não é preciso acrescentar mais nada. A armação hexagonal em metal apresenta perfis notáveis e lentes planas em cristal, montadas em uma armação dourada clássica com hastes muito finas. Misturar e combinar opções de cores básicas degradê para criar uma união perfeita. Experimente a emoção de usar um clássico reinterpretado que nunca lhe fará sentir fora do lugar.",
+      "preco": "780.00",
+      "imagem": "Produtos/oculos_de_sol/hexagonal_flat_lenses",
+      "peso": "0.1",
       "id": 2
     },
     {
-      "nome": "Drop",
+      "produto_id": "500",
+      "codigo": "123",
+      "categoria": "83",
+      "nome": "HEXAGONAL FLAT LENSES",
+      "descricao": "O que você obtém quando cruza um círculo com um quadrado? Os RB3548N hexagonais, obvio! A evolução do formato arredondado com lentes planas em cristal. Lentes planas em formato arredondado, em matéria de lentes não é preciso acrescentar mais nada. A armação hexagonal em metal apresenta perfis notáveis e lentes planas em cristal, montadas em uma armação dourada clássica com hastes muito finas. Misturar e combinar opções de cores básicas degradê para criar uma união perfeita. Experimente a emoção de usar um clássico reinterpretado que nunca lhe fará sentir fora do lugar.",
+      "preco": "780.00",
+      "imagem": "Produtos/oculos_de_sol/hexagonal_flat_lenses",
+      "peso": "0.1",
       "id": 3
     }
   ]

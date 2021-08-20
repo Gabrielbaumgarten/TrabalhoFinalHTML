@@ -10,17 +10,23 @@
 
     <!-- JavaScript -->
     <script src="../js/menu.js"></script>
+    <script src="../js/produtos.js"></script>
     <script src="../js/dragNdrop.js"></script>
     <script src="../js/carrinho.js"></script>
+    <script>
+      function CarregarPagina(){
+        OrdenarProdutos()
+        AlterarIconeCarrinho(NumProdutosCarrinho())
+      }
+    </script>
 
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="../js/produtos.js"></script>
     <title>Categorias</title>
 </head>
-<body onload="OrdenarProdutos()">
+<body onload="CarregarPagina()">
   <div class='overlay'></div>
 
   <div class="top-bar">
@@ -49,17 +55,8 @@
   </div>
 
   <div class=opcoesProdutos id='opcoesProdutos'>
-
-    <div class="prod1">
-      <div class="esquerda">
-        <img src="../assets/oculosdesol.png">
-        <p class="preco">R$ 400,00</p>
-      </div>
-      <div class="direita">
-        <p class="titulo">Ray Ban</p>
-        <p class="descricao">Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada Coisarada </p>
-      </div>
-    </div>
+    
   </div>
+
 </body>
 </html>
