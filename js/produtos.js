@@ -1,4 +1,4 @@
-function ListarProdutos(){
+function ListarProdutosAdm(){
   const httpRequest = new XMLHttpRequest()
     var resposta = ''
 
@@ -9,6 +9,7 @@ function ListarProdutos(){
     httpRequest.open('GET', 'http://loja.buiar.com/?key=3Tz81Yftd3C&c=produto&t=listar&f=json', false)
     httpRequest.send()
 
+    console.log(resposta.dados)
     resposta.dados.forEach( produto =>{
 
       var divProduto = document.createElement('div')
@@ -185,8 +186,6 @@ function ListarProdutos(){
       div.appendChild(divProduto)
       div.appendChild(divAlterarProduto)
         
-
-  
       var divListarProdutos = document.getElementById('lista-produtos')
       divListarProdutos.appendChild(div)
 
@@ -404,7 +403,7 @@ function SelecionarCategoria(id,nome){
     }
 }
 
-function OrdenarProdutos(){
+function ListarProdutos(categoria_id){
   const httpRequest = new XMLHttpRequest()
   var resposta = ''
 
@@ -415,51 +414,97 @@ function OrdenarProdutos(){
   httpRequest.open('GET', 'http://loja.buiar.com/?key=3Tz81Yftd3C&c=produto&t=listar&f=json', false)
   httpRequest.send()
   
+  
   resposta.dados.forEach(produto =>{
-    var divProduto = document.createElement('div')
-    divProduto.classList.add('prod1')
-    divProduto.setAttribute('draggable','true')
-    divProduto.setAttribute('ondragstart', 'Drag(event)')
-    divProduto.setAttribute('ondblclick', 'AdicionarNoCarrinhoDoubleClick(event)')
+    if(produto.categoria == parseInt(categoria_id)){
+      var divProduto = document.createElement('div')
+      divProduto.classList.add('prod1')
+      divProduto.setAttribute('draggable','true')
+      divProduto.setAttribute('ondragstart', 'Drag(event)')
+      divProduto.setAttribute('ondblclick', 'AdicionarNoCarrinhoDoubleClick(event)')
+      divProduto.addEventListener('click', ()=>{MudarPagina('produto.html?categoria='+categoria_id+'&id=' + produto.id)})
+  
+  
+      var divEsquerda = document.createElement('div')
+      divEsquerda.classList.add('esquerda')
+  
+      var divDireita = document.createElement('div')
+      divDireita.classList.add('direita')
+  
+      var id = document.createElement('p')
+      id.innerHTML = produto.id
+      id.style.display = 'none'
+  
+      var imagem = new Image()
+      imagem.src = '../assets/'+ produto.imagem + '/img01.png'
+      imagem.setAttribute('draggable',false)
+  
+      var preco = document.createElement('p')
+      preco.innerHTML = 'R$ ' + produto.preco.split('.')[0] + ',' + produto.preco.split('.')[1]
+      preco.classList.add('preco')
+  
+      var titulo = document.createElement('p')
+      titulo.innerHTML = produto.nome
+      titulo.classList.add('titulo')
+  
+      var descricao = document.createElement('p')
+      descricao.innerHTML = produto.descricao
+      descricao.classList.add('descricao')
+  
+      divEsquerda.appendChild(imagem)
+      divEsquerda.appendChild(preco)
+  
+      divDireita.appendChild(titulo)
+      divDireita.appendChild(descricao)
+  
+      divProduto.appendChild(divEsquerda)
+      divProduto.appendChild(divDireita)
+      divProduto.appendChild(id)
+  
+      var divOpcoesProdutos = document.getElementById('opcoesProdutos')
+  
+      divOpcoesProdutos.appendChild(divProduto)
+    }
+  })
+}
 
+function AlterarCaminho(categoria_id){
+  const httpRequest = new XMLHttpRequest()
+  var resposta = ''
 
-    var divEsquerda = document.createElement('div')
-    divEsquerda.classList.add('esquerda')
+  httpRequest.onload = () => {
+      resposta = JSON.parse(httpRequest.response)
+  }
 
-    var divDireita = document.createElement('div')
-    divDireita.classList.add('direita')
+  httpRequest.open('GET', 'http://loja.buiar.com/?key=3Tz81Yftd3C&c=categoria&t=listar&f=json', false)
+  httpRequest.send()
 
-    var id = document.createElement('p')
-    id.innerHTML = produto.id
-    id.style.display = 'none'
+  resposta.dados.forEach( categoria =>{
+    if(categoria.id == categoria_id){
+      document.getElementById('pagina').innerHTML = categoria.nome
+    }
+  })
+}
 
-    var imagem = new Image()
-    imagem.src = '../assets/'+ produto.imagem + '/img01.png'
+function BuscarProduto(produto_id){
+  const httpRequest = new XMLHttpRequest()
+  var resposta = ''
 
-    var preco = document.createElement('p')
-    preco.innerHTML = 'R$ ' + produto.preco.split('.')[0] + ',' + produto.preco.split('.')[1]
-    preco.classList.add('preco')
+  httpRequest.onload = () => {
+      resposta = JSON.parse(httpRequest.response)
+  }
 
-    var titulo = document.createElement('p')
-    titulo.innerHTML = produto.nome
-    titulo.classList.add('titulo')
+  httpRequest.open('GET', 'http://loja.buiar.com/?key=3Tz81Yftd3C&c=produto&t=listar&f=json&id='+produto_id, false)
+  httpRequest.send()
 
-    var descricao = document.createElement('p')
-    descricao.innerHTML = produto.descricao
-    descricao.classList.add('descricao')
-
-    divEsquerda.appendChild(imagem)
-    divEsquerda.appendChild(preco)
-
-    divDireita.appendChild(titulo)
-    divDireita.appendChild(descricao)
-
-    divProduto.appendChild(divEsquerda)
-    divProduto.appendChild(divDireita)
-    divProduto.appendChild(id)
-
-    var divOpcoesProdutos = document.getElementById('opcoesProdutos')
-
-    divOpcoesProdutos.appendChild(divProduto)
+  resposta.dados.forEach( produto =>{
+    document.getElementById('produto_id').innerHTML = produto.id
+    document.getElementById('produto_titulo').innerHTML = produto.nome
+    document.getElementById('produto_descricao').innerHTML = produto.descricao
+    document.getElementById('produto_imagem_principal').src = '../assets/' + produto.imagem + '/img01.png'
+    document.getElementById('produto_imagem_alternativa_01').src = '../assets/' + produto.imagem + '/img02.png'
+    document.getElementById('produto_imagem_alternativa_02').src = '../assets/' + produto.imagem + '/img03.png'
+    document.getElementById('produto_imagem_alternativa_03').src = '../assets/' + produto.imagem + '/img04.png'
+    document.getElementById('produto_preco').innerHTML ='R$ ' + produto.preco.split('.')[0] + ',' + produto.preco.split('.')[1]
   })
 }

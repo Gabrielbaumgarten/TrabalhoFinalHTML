@@ -59,6 +59,8 @@ function AdicionarNoCarrinho(produto){
     httpRequest.open('POST', 'http://localhost:3000/carrinho', false)
     httpRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
     httpRequest.send(obj)
+
+    // console.log(resposta)
 }
 
 function NumProdutosCarrinho(){
@@ -114,3 +116,22 @@ function AlterarIconeCarrinho(numProdutos){
             break
     }
 }
+
+function AdicionarNoCarrinhoClick(){
+    var id =document.getElementById('produto_id').innerHTML
+
+    const httpRequest = new XMLHttpRequest()
+    var resposta = ''
+
+    httpRequest.onload = () => {
+        resposta = JSON.parse(httpRequest.response)
+    }
+
+    httpRequest.open('GET', 'http://loja.buiar.com/?key=3Tz81Yftd3C&c=produto&t=listar&id="'+id+'"&f=json', false)
+    httpRequest.send()
+
+    AdicionarNoCarrinho(resposta.dados[0])
+
+    // var numero = NumProdutosCarrinho()
+    // AlterarIconeCarrinho(numero)
+  }

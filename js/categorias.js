@@ -229,7 +229,7 @@ function CarregarPaginaCategorias(){
 
         var divCategoria = document.createElement('div')
         divCategoria.classList.add('categoria')
-        divCategoria.addEventListener('click', ()=>{MudarPagina('produtos.html')})
+        divCategoria.addEventListener('click', ()=>{MudarPagina('produtos.html?categoria=' + categoria.id)})
 
         // definição da imagem de fundo
         var divImagem = document.createElement('div')
