@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/adm.css">
-    <link rel="stylesheet" href="../css/menu.css">
-    <script src="../js/menu.js"></script>
+    <script src="../js/transicao.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +15,7 @@
 </head>
 
 <body>
-    <div class='overlay'></div>
+
     <div class="top-bar">
         <div class="logo">
             <svg width="41" height="31" viewBox="0 0 41 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,33 +23,18 @@
             </svg>
         </div>
 
-        <div class="icon-menu" onclick="montaMenu()">
+        <div class="icon-menu">
             <svg width="40" height="30" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 0H40V5H0V0ZM10 12.5H40V17.5H10V12.5ZM22.5 25H40V30H22.5V25Z" fill="#736862"/>
             </svg>
         </div>
     </div>
 
-    <div class="titulo">
-        <a href="../paginas/adm-main.html">Seção de administração</a>
+    <div class=tituloCategorias>
+        <a href="../paginas/adm-main.html">Seção de administração > </a>
+        <a href="../paginas/adm-pedidos.html">Pedidos</a>
     </div>
-
-    <div class="opcoes">
-        <div class="categorias" onclick="window.location.href = '../paginas/adm-categorias.html'">
-            <img src="../assets/icon-cat.svg">
-            <a href="../paginas/adm-categorias.html">Categorias</a>
-        </div>
-
-        <div class="produtos" onclick="window.location.href = '../paginas/adm-produtos.html'">
-            <img src="../assets/icon-prod.svg">
-            <a href="../paginas/adm-produtos.html">Produtos</a>
-        </div>
-        <div class="pedidos" onclick="window.location.href = '../paginas/adm-pedidos.html'">
-            <img src="">
-            <a href="../paginas/adm-pedidos.html">Pedidos</a>
-        </div>
-    </div>
-
+    
 </body>
 
 </html>

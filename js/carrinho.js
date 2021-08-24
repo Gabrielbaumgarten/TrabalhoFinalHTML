@@ -68,22 +68,15 @@ function BuscarCEP(){
     console.log(resposta)
     console.log(resposta.logradouro)
 
-    var rua = document.createElement('p')
-    rua.innerText = resposta.logradouro
+    var rua = document.getElementById('rua')
+    rua.innerText = 'Rua: ' + resposta.logradouro
 
-    var bairro = document.createElement('p')
-    bairro.innerText = resposta.bairro
-    
-    var cidade = document.createElement('p')
-    cidade.innerText = resposta.localidade
+    var bairro = document.getElementById('bairro')
+    bairro.innerText = 'Bairro: ' + resposta.bairro
 
-    var uf = document.createElement('p')
-    uf.innerText = resposta.uf
+    var cidade = document.getElementById('cidade')
+    cidade.innerText = 'Cidade: ' + resposta.localidade
 
-    var divDados = document.getElementById('dados')
-    divDados.appendChild(rua)
-    divDados.appendChild(bairro)
-    divDados.appendChild(cidade)
-    divDados.appendChild(uf)
-
+    var uf = document.getElementById('uf')
+    uf.innerText = "UF: " + resposta.uf
 } 

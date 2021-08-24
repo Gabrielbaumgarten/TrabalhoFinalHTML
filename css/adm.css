@@ -64,7 +64,8 @@ body {
 }
 
 .categorias,
-.produtos {
+.produtos,
+.pedidos {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,7 +92,8 @@ body {
 }
 
 .categorias:hover,
-.produtos:hover {
+.produtos:hover,
+.pedidos:hover {
   background: var(--branco);
 }
 
@@ -100,7 +102,8 @@ body {
 }
 
 .categorias a,
-.produtos a {
+.produtos a,
+.pedidos a {
   text-decoration: none;
   font-family: Nunito;
   font-style: normal;
@@ -244,4 +247,8 @@ body {
   height: 5%;
   margin-top: 1%;
   font-size: 190%;
+}
+
+.opcoes .pedidos{
+  margin: 0%;
 }

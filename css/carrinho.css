@@ -1,0 +1,48 @@
+.dados{
+    display: flex;
+    flex-direction: column;
+}
+
+.dados .endereco{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dados .endereco .textoCep{
+    width: 20%;
+}
+
+.dados .endereco .botaoCep{
+    width: 10%;
+}
+
+.dados .cliente{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dados .cliente .nome{
+    width: 20%;
+}
+.dados .cliente .cpf{
+    width: 20%;
+}
+
+.dados .endereco .numero{
+    width: 20%;
+}
+
+.dados .endereco .complemento{
+    width: 20%;
+}
+
+.dados .finalizar{
+    display: flex;
+    justify-content: center;
+}
+
+.dados .finalizar .botaoFinalizar{
+    width: 10%;
+}

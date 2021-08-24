@@ -6,11 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="../js/carrinho.js"></script>
+    <link rel="stylesheet" href="../css/carrinho.css">
 </head>
 <body>
     checkout
-    <input type="text" placeholder="12345678" id='cep'>
-    <input type="submit" value="Buscar CEP" onclick="BuscarCEP()">
-    <div id="dados"></div>
+    <div class="dados">
+        <div class="cliente">
+            Nome<input type="text" class="nome">
+            CPF<input type="text" class="cpf" placeholder="123.456.789-00">
+        </div>
+        <div class="endereco">
+            CEP<input type="text" placeholder="12345-678" id='cep'class='textoCep'>
+            <button id="cep" onclick="BuscarCEP()" class="botaoCep">Buscar CEP</button>
+            <div id="rua"></div>
+            <div id="bairro"></div>
+            <div id="cidade"></div>
+            <div id="uf"></div>
+            Número<input type="text" class="numero">
+            Complemento<input type="text" class="complemento"> 
+        </div>
+        <div class="finalizar">
+            <button onclick="ListarPedido()" class="botaoFinalizar">Finalizar Pedido</button>
+        </div>
+    </div>
 </body>
 </html>
