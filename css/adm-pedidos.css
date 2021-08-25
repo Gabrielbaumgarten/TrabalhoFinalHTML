@@ -41,7 +41,8 @@ body {
     margin-top: 2rem;
 }
 
-.caminho a {
+.caminho a,
+.headers {
     text-decoration: none;
     font-family: Nunito;
     font-style: normal;
@@ -51,6 +52,55 @@ body {
     /* identical to box height */
     letter-spacing: 0.2em;
     color: var(--primary);
+}
+
+
+.headers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 80%;
+    margin-top: 10vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+
+
+}
+
+.headers #header-id {
+    transform: translateX(2rem);
+}
+
+.headers #header-data {
+    transform: translateX(-2rem);
+}
+
+.headers #header-nome {
+    transform: translateX(0rem);
+}
+.headers #header-cpf {
+    transform: translateX(-2rem);
+}
+
+.headers #header-cep {
+    transform: translateX(1rem);
+}
+
+.headers #header-end {
+    transform: translateX(2rem);
+}
+
+.headers #header-bairro {
+    transform: translateX(8rem);
+}
+
+.headers #header-cid {
+    transform: translateX(4rem);
+}
+
+.headers #header-uf {
+    transform: translateX(0.5rem);
 }
 
 .lista-pedidos {

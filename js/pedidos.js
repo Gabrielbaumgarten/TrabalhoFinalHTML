@@ -20,14 +20,23 @@ function CarregarPedidos(){
         idPedido.innerHTML = pedido.id
 
         var data = document.createElement('p')
-        // data.innerHTML = pedido.time.split(' ')[0].split('-')[2] + pedido.time.split(' ')[0].split('-')[1] + pedido.time.split(' ')[0].split('-')[0] + ' ' +pedido.time.split(' ')[1]
-        data.innerHTML = pedido.time
+        data.innerHTML = pedido.time.split(' ')[0].split('-')[2] + '/'
+            + pedido.time.split(' ')[0].split('-')[1] + '/'
+            + pedido.time.split(' ')[0].split('-')[0] + ' '
+            +pedido.time.split(' ')[1]
 
         var nome = document.createElement('p')
         nome.innerHTML = pedido.nome
 
         var cpf = document.createElement('p')
-        cpf.innerHTML = pedido.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g,'\$1.\$2.\$3\-\$4')
+
+        // trata cpf que começa com 0
+        if (pedido.cpf.length < 11){
+            var valorCpf = '0' + pedido.cpf
+        } else {
+            valorCpf = pedido.cpf
+        }
+        cpf.innerHTML = valorCpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g,'\$1.\$2.\$3\-\$4')
 
         var cep = document.createElement('p')
         cep.innerHTML = pedido.cep.replace(/(\d{2})(\d{3})(\d{3})/g,'\$1.\$2\-\$3')

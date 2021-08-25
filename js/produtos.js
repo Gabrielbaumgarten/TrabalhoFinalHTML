@@ -61,8 +61,6 @@ function ListarProdutosAdm(){
       divProduto.appendChild(divButtons)
 
 
-
-
       var divAlterarProduto = document.createElement('div')
       divAlterarProduto.setAttribute('id', 'alterar_produto' + produto.id)
       divAlterarProduto.classList.add('conteudo')
@@ -77,7 +75,7 @@ function ListarProdutosAdm(){
       var inputIdProduto = document.createElement('input')
       inputIdProduto.setAttribute('type','text')
       inputIdProduto.setAttribute('id','id_alterar_produto'+produto.id)
-      inputIdProduto.setAttribute('readonly','true')
+      inputIdProduto.setAttribute('disabled','true')
       
       var labelNomeProduto = document.createElement('label')
       labelNomeProduto.setAttribute('for','nome_produto')
@@ -154,17 +152,17 @@ function ListarProdutosAdm(){
       formulario.appendChild(labelIdProduto)
       formulario.appendChild(inputIdProduto)
 
+      formulario.appendChild(labelCodigoProduto)
+      formulario.appendChild(inputCodigoProduto)
+
+      formulario.appendChild(labelCategoriaProduto)
+      formulario.appendChild(dropdown)
+
       formulario.appendChild(labelNomeProduto)
       formulario.appendChild(inputNomeProduto)
 
       formulario.appendChild(labelDescricaoProduto)
       formulario.appendChild(inputDescricaoProduto)
-
-      formulario.appendChild(labelCategoriaProduto)
-      formulario.appendChild(dropdown)
-
-      formulario.appendChild(labelCodigoProduto)
-      formulario.appendChild(inputCodigoProduto)
 
       formulario.appendChild(labelImagemProduto)
       formulario.appendChild(inputImagemProduto)
