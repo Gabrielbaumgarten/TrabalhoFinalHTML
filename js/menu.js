@@ -57,7 +57,9 @@ function montaMenu() {
 
     divOver.style.display = 'flex'
     divOver.style.position = 'fixed'
-    divOver.style.marginTop = '-8vh'
+    if (!(document.title === 'Categorias')){
+      divOver.style.marginTop = '-8vh'
+    }
 
   } else {
     divOver.style.display = 'flex'

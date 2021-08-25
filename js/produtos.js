@@ -264,6 +264,7 @@ function CriarProduto(){
         window.location.replace('adm-listar-produtos.html')
     }
 }
+
 function PreencheProduto(id, categoria, nome, codigo, preco, descricao, imagem, peso) {
   var id_produto = document.getElementById('id_alterar_produto'+id)
   var nome_produto = document.getElementById('nome_alterar_produto'+id)
@@ -295,6 +296,7 @@ function MontarAlterarProduto(id, categoria, nome, codigo, preco, descricao, ima
       div.style.display = 'none'
   }
 }
+
 function AlterarProduto(id){
   const httpRequest = new XMLHttpRequest()
     var resposta = ''
