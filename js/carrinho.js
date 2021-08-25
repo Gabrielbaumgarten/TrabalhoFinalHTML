@@ -106,10 +106,6 @@ function ListarCarrinho(){
             var quantidade = document.createElement('p')
             quantidade.innerHTML = respostaQuantidade.length
 
-            // var produtoId = document.createElement('p')
-            // produtoId.innerHTML = item.produto_id
-            // produtoId.style.display = 'none'
-
             var iconAdd = new Image()
             iconAdd.src = '../assets/icon-add.svg'
             iconAdd.addEventListener('click',()=>{AdicionarMaisItem(item.produto_id)})
@@ -201,6 +197,23 @@ function RemoverTodosItens(produto_id){
     }
 
     httpRequest.open('GET', 'http://localhost:3000/carrinho?produto_id='+produto_id, false)
+    httpRequest.send()
+
+    resposta.forEach( item =>{
+        httpRequest.open('DELETE', 'http://localhost:3000/carrinho/'+item.id, false)
+        httpRequest.send()
+    })
+}
+
+function LimparCarrinho(){
+    const httpRequest = new XMLHttpRequest()
+    var resposta = ''
+
+    httpRequest.onload = () => {
+        resposta = JSON.parse(httpRequest.response)
+    }
+
+    httpRequest.open('GET', 'http://localhost:3000/carrinho', false)
     httpRequest.send()
 
     resposta.forEach( item =>{
