@@ -10,6 +10,7 @@ function AtualizarCarrinho(){
     httpRequest.send()
 
     AlterarIconeCarrinho(resposta.length)
+    location.reload()
     
 }
 
@@ -164,6 +165,8 @@ function AdicionarMaisItem(produto_id){
     httpRequest.open('POST', 'http://localhost:3000/carrinho', false)
     httpRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
     httpRequest.send(JSON.stringify(resposta[0]))
+
+    AtualizarCarrinho()
 }
 
 function DiminuirItem(produto_id){
@@ -179,6 +182,8 @@ function DiminuirItem(produto_id){
 
     httpRequest.open('DELETE', 'http://localhost:3000/carrinho/'+resposta[0].id, false)
     httpRequest.send()
+
+    AtualizarCarrinho()
 }
 
 function RemoverTodosItens(produto_id){
@@ -196,6 +201,8 @@ function RemoverTodosItens(produto_id){
         httpRequest.open('DELETE', 'http://localhost:3000/carrinho/'+item.id, false)
         httpRequest.send()
     })
+
+    AtualizarCarrinho()
 }
 
 function LimparCarrinho(){
@@ -213,4 +220,5 @@ function LimparCarrinho(){
         httpRequest.open('DELETE', 'http://localhost:3000/carrinho/'+item.id, false)
         httpRequest.send()
     })
+    AtualizarCarrinho()
 }
