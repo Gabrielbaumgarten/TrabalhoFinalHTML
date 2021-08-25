@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Css -->
-    <link rel="stylesheet" href="../css/produtos.css">
+    <link rel="stylesheet" href="../css/checkout.css">
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/transicao.css">
 
@@ -59,7 +59,7 @@
     </div>
 
     <div style='display: flex'>
-      <div class="carrinho" ondrop="Drop(event)" ondragover="AllowDrop(event)" onclick="MudarPagina('checkout.html')">
+      <div class="carrinho" ondrop="Drop(event)" ondragover="AllowDrop(event)" onclick="window.location.replace('checkout.html')">
         <img id='carrinho' src="../assets/icon-carrinho-0.svg" alt="">
       </div>
   
@@ -71,13 +71,38 @@
     </div>
   </div>
 
-  <div class=tituloProdutos>
-      <a href="../paginas/categorias.html">Visiomax > </a>
-      <a id='pagina' href="../paginas/produtos.html">Óculos de Sol</a>
+
+  <div class='produtos_carrinho' id='ProdutosCarrinho'>
+
+    <div class="produto">
+        <img src="../assets/Produtos/oculos_de_sol/aviator_total_black/img01.png" alt="">
+        <h1>Ray ban</h1>
+
+        <div class="quantidade">
+            <img src="../assets/icon-minus.svg" alt="">
+            <p id='quantidade_valor'>1</p>
+            <img src="../assets/icon-add.svg" alt="">
+        </div>
+
+        <p>R$ 400,00</p>
+
+        <img class='icon-delete' src="../assets/icon-remove.svg" alt="">
+    </div>
+    
   </div>
 
-  <div class=opcoesProdutos id='opcoesProdutos'>
-    
+  <hr/>
+
+  <div class='finalizar_compra'>
+      <div class="total">
+          <h1>Total</h1>
+          <p>R$ 400,00</p>
+      </div>
+
+      <button>
+          <p>Pagar</p>
+          <img src="../assets/icon-cash.svg" alt="">
+      </button>
   </div>
 
   <div id="transicao" class="transicao">
