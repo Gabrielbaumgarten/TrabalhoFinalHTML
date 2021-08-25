@@ -54,29 +54,3 @@ function AlterarIconeCarrinho(numProdutos){
             break
     }
 }
-function BuscarCEP(){
-    const httpRequest = new XMLHttpRequest()
-    var resposta = ''
-
-    httpRequest.onload = () => {
-        resposta = JSON.parse(httpRequest.response)
-    }
-
-    httpRequest.open('GET', 'https://viacep.com.br/ws/' + document.getElementById('cep').value + '/json', false)
-    httpRequest.send()
-
-    console.log(resposta)
-    console.log(resposta.logradouro)
-
-    var rua = document.getElementById('rua')
-    rua.innerText = 'Rua: ' + resposta.logradouro
-
-    var bairro = document.getElementById('bairro')
-    bairro.innerText = 'Bairro: ' + resposta.bairro
-
-    var cidade = document.getElementById('cidade')
-    cidade.innerText = 'Cidade: ' + resposta.localidade
-
-    var uf = document.getElementById('uf')
-    uf.innerText = "UF: " + resposta.uf
-} 
