@@ -330,12 +330,12 @@ function AlterarProduto(id){
     }
 
     httpRequest.open('GET', "http://loja.buiar.com/?key=3Tz81Yftd3C&c=produto&t=alterar"+
-    '&id=' + id_produto +
+    '&id=' + parseInt(id_produto) +
     '&codigo=' + codigo_produto +
-    '&categoria=' + categoria_produto +
+    '&categoria=' + parseInt(categoria_produto) +
     '&nome='+ nome_produto +
     '&descricao=' + descricao_produto +
-    '&preco=' + preco_produto +
+    '&preco=' + parseInt(preco_produto )+
     '&imagem=' + img_produto +
     '&peso=' + peso_produto +
     "&f=json", false)
