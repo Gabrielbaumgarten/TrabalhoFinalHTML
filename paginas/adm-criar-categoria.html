@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/adm-criar-categoria.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <script src="../js/menu.js"></script>
     <script src="../js/transicao.js"></script>
     <script src="../js/categorias.js"></script>
 
@@ -16,7 +18,7 @@
 </head>
 
 <body >
-
+    <div class="overlay"></div>
     <div class="top-bar">
         <div class="logo">
             <svg width="41" height="31" viewBox="0 0 41 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +26,7 @@
             </svg>
         </div>
 
-        <div class="icon-menu">
+        <div class="icon-menu" onclick="montaMenu()">
             <svg width="40" height="30" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 0H40V5H0V0ZM10 12.5H40V17.5H10V12.5ZM22.5 25H40V30H22.5V25Z" fill="#736862"/>
             </svg>

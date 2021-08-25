@@ -16,17 +16,21 @@ function CarregarPedidos(){
         var divPedido = document.createElement('div')
         divPedido.classList.add('pedido')
 
+        var idPedido = document.createElement('p')
+        idPedido.innerHTML = pedido.id
+
         var data = document.createElement('p')
-        data.innerHTML = pedido.time.split(' ')[0].split('-')[2] + pedido.time.split(' ')[0].split('-')[1] + pedido.time.split(' ')[0].split('-')[0] + ' ' +pedido.time.split(' ')[1]
+        // data.innerHTML = pedido.time.split(' ')[0].split('-')[2] + pedido.time.split(' ')[0].split('-')[1] + pedido.time.split(' ')[0].split('-')[0] + ' ' +pedido.time.split(' ')[1]
+        data.innerHTML = pedido.time
 
         var nome = document.createElement('p')
         nome.innerHTML = pedido.nome
 
         var cpf = document.createElement('p')
-        cpf.innerHTML = pedido.cpf
+        cpf.innerHTML = pedido.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g,'\$1.\$2.\$3\-\$4')
 
         var cep = document.createElement('p')
-        cep.innerHTML = pedido.cep
+        cep.innerHTML = pedido.cep.replace(/(\d{2})(\d{3})(\d{3})/g,'\$1.\$2\-\$3')
 
         var endreco = document.createElement('p')
         endreco.innerHTML = pedido.rua +', '+ pedido.numero +' '+ pedido.complemento
@@ -48,6 +52,7 @@ function CarregarPedidos(){
         iconRemove.src = '../assets/icon-remove.svg'
         iconRemove.addEventListener('click',()=>{RemoverPedido(pedido.id)})
 
+        divPedido.appendChild(idPedido)
         divPedido.appendChild(data)
         divPedido.appendChild(nome)
         divPedido.appendChild(cpf)

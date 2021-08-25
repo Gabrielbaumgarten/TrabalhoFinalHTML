@@ -423,7 +423,7 @@ function ListarProdutos(categoria_id){
       divProduto.setAttribute('draggable','true')
       divProduto.setAttribute('ondragstart', 'Drag(event)')
       divProduto.setAttribute('ondblclick', 'AdicionarNoCarrinhoDoubleClick(event)')
-      divProduto.addEventListener('click', ()=>{MudarPagina('produto.html?categoria='+categoria_id+'&id=' + produto.id)})
+      // divProduto.addEventListener('click', ()=>{MudarPagina('produto.html?categoria='+categoria_id+'&id=' + produto.id)})
   
   
       var divEsquerda = document.createElement('div')

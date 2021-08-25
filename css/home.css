@@ -29,6 +29,7 @@ body{
 
 .top-bar .icon-menu svg{
     width: 2rem;
+    cursor: pointer;
 }
 
 .main{
