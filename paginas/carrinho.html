@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Css -->
-    <link rel="stylesheet" href="../css/checkout.css">
+    <link rel="stylesheet" href="../css/teste.css">
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/transicao.css">
 
@@ -17,18 +17,8 @@
     <script src="../js/transicao.js"></script>
     <script>
       function CarregarPagina(){
-        var query = location.search.slice(1);
-        var partes = query.split('&');
-        var data = {};
-        partes.forEach(function (parte) {
-            var chaveValor = parte.split('=');
-            var chave = chaveValor[0];
-            var valor = chaveValor[1];
-            data[chave] = valor;
-        });
-        console.log(data)
-        ListarProdutos(data.categoria)
-        AlterarCaminho(data.categoria)
+        ListarCarrinho()
+        SomarCarrinho()
         AlterarIconeCarrinho(NumProdutosCarrinho())
       }
 
@@ -71,43 +61,34 @@
     </div>
   </div>
 
-
-  <div class='produtos_carrinho' id='ProdutosCarrinho'>
-
-    <div class="produto">
-        <img src="../assets/Produtos/oculos_de_sol/aviator_total_black/img01.png" alt="">
-        <h1>Ray ban</h1>
-
-        <div class="quantidade">
-            <img src="../assets/icon-minus.svg" alt="">
-            <p id='quantidade_valor'>1</p>
-            <img src="../assets/icon-add.svg" alt="">
-        </div>
-
-        <p>R$ 400,00</p>
-
-        <img class='icon-delete' src="../assets/icon-remove.svg" alt="">
+  <div class="conteudo">
+    
+    <div class='produtos_carrinho' id='ProdutosCarrinho'>
+      
+      
     </div>
     
-  </div>
-
-  <hr/>
-
-  <div class='finalizar_compra'>
+    <hr/>
+    
+    <div class='finalizar_compra'>
       <div class="total">
-          <h1>Total</h1>
-          <p>R$ 400,00</p>
+        <h1>Total</h1>
+        <p id='valor_conta'>R$ 0,00</p>
       </div>
-
-      <button>
-          <p>Pagar</p>
-          <img src="../assets/icon-cash.svg" alt="">
+      
+      <button onclick="MudarPagina('checkout.html')">
+        <div class="background-hover"></div>
+        <p>Pagar</p>
+        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 10V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2V10C0 11.1 0.9 12 2 12H16C17.1 12 18 11.1 18 10ZM16 10H2V2H16V10ZM9 3C7.34 3 6 4.34 6 6C6 7.66 7.34 9 9 9C10.66 9 12 7.66 12 6C12 4.34 10.66 3 9 3ZM22 3V14C22 15.1 21.1 16 20 16H3V14H20V3H22Z" fill="#736862"/>
+        </svg>
       </button>
+    </div>
   </div>
-
-  <div id="transicao" class="transicao">
-
-    <div id="transicao1" class="transicao1"></div>
+    
+    <div id="transicao" class="transicao">
+      
+      <div id="transicao1" class="transicao1"></div>
     <div id="transicao2" class="transicao2"></div>
     <div id="transicao3" class="transicao3">
         <svg width="41" height="31" viewBox="0 0 41 31" fill="none" xmlns="http://www.w3.org/2000/svg">

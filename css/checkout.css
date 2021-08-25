@@ -31,6 +31,7 @@ body {
 
 .top-bar .icon-menu svg {
     width: 2rem;
+    cursor: pointer;
 }
 
 .caminho {
@@ -103,13 +104,49 @@ button {
     background: transparent;
     padding: 1rem;
 
+    filter: drop-shadow(7px 7px 4px rgba(0, 0, 0, 0.25));
+
+    position: relative;
+
     cursor: pointer;
 
+    transition: 1s ease-in;
+}
+
+button p{
     font-family: Nunito;
     letter-spacing: 0.2em;
     font-size: 1rem;
     font-weight: bold;
     color: var(--primary);
+
+    transition: .5s .4s ease-in;
+}
+
+button .background-hover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    height: 100%;
+    width: 0;
+
+    background: var(--secondary);
+
+    transition: .7s ease-in;
+}
+
+button:hover{
+    transform: scale(1.05);
+}
+
+button:hover .background-hover{
+    width: 100%;
+}
+
+button:hover p{
+    color: var(--branco);
 }
 
 .dados .formulario input
