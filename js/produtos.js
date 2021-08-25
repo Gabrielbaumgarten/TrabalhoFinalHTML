@@ -305,10 +305,10 @@ function AlterarProduto(id){
     var codigo_produto = document.getElementById('codigo_alterar_produto'+id).value
     var nome_produto = document.getElementById('nome_alterar_produto'+id).value
     var categoria_produto = document.getElementById('categoria_alterar_produto'+id).innerHTML
-    var descricao_produto = document.getElementById('descricao_produto').value
+    var descricao_produto = document.getElementById('descricao_alterar_produto'+id).value
     var preco_produto = document.getElementById('preco_alterar_produto'+id).value
-    var img_produto = document.getElementById('img_produto').value
-    var peso_produto = document.getElementById('peso_produto').value
+    var img_produto = document.getElementById('imagem_alterar_produto'+id).value
+    var peso_produto = document.getElementById('peso_alterar_produto'+id).value
 
 
 
