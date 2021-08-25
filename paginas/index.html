@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Home</title>
 
     <script>
 
@@ -22,7 +22,7 @@
 
             await new Promise(r => setTimeout(r, 2000))
 
-            window.location.assign('http://localhost:5500/TabalhoFinalHTMLCSS/paginas/categorias.html')
+            window.location.assign(url)
         }
     </script>
 </head>
@@ -48,7 +48,7 @@
             <div class="main-text">
                 <p>Olhando cada vez mais para o seu futuro</p>
             </div>
-            <button onclick="MudarPagina()">
+            <button onclick="MudarPagina('categorias.html')">
                 <div class="background-hover"></div>
                 <p>Experimente</p>
 

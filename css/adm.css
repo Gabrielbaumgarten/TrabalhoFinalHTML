@@ -31,6 +31,7 @@ body {
 
 .top-bar .icon-menu svg {
   width: 2rem;
+  cursor: pointer;
 }
 
 .titulo {
@@ -61,11 +62,10 @@ body {
 
   margin-top: 12vh;
   margin-bottom: 12vh;
+  margin-right: 3vw;
 }
 
-.categorias,
-.produtos,
-.pedidos {
+.categorias, .produtos, .pedidos {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,7 +97,7 @@ body {
   background: var(--branco);
 }
 
-.produtos {
+.produtos, .pedidos {
   margin-right: 3vw;
 }
 
