@@ -34,11 +34,10 @@ body {
 }
 
 .caminho {
-    position: absolute;
     width: 42%;
     height: 4%;
-    left: 5%;
-    top: 20%;
+    margin-left: 5%;
+    margin-top: 2rem;
 }
 
 .caminho a {
@@ -53,50 +52,16 @@ body {
     color: var(--primary);
 }
 
-.categorias {
-    width: 80%;
-    height: 65vh;
-
-    margin-top: 8vh;
-    padding-left: 5vw;
-    padding-right: 5vw;
-}
-
-.categorias .nova-categoria {
-    display: flex;
-    justify-content: flex-end;
-
+.lista-pedidos {
     width: 100%;
-
-    cursor: pointer;
-}
-
-.categorias .nova-categoria > a {
+    height: 70vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-
-    text-decoration: none;
 }
 
-.categorias .nova-categoria p {
-    font-family: Nunito;
-    font-size: 1rem;
-    letter-spacing: 0.2em;
-    color: var(--primary);
-
-    margin-left: 0.5rem;
-}
-
-.categorias .lista-categorias {
-    width: 100%;
-    height: 100%;
-
-    overflow-y: auto;
-}
-
-.categorias .lista-categorias .categoria {
-    width: 98%;
+.lista-pedidos >div .pedido{
+    width: 90%;
     height: 10vh;
 
     margin-top: 2rem;
@@ -105,29 +70,73 @@ body {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 
     background: rgba(121, 111, 105, 0.1);
     box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
 }
 
-.categorias .lista-categorias .categoria p {
+.lista-pedidos .pedido p {
     margin-left: 2rem;
-
+  
     font-family: Nunito;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0.2em;
-
+  
     color: var(--primary);
-}
+  }
 
-.categorias .lista-categorias .categoria .buttons {
-    width: 10rem;
-    display: flex;
-    justify-content: space-around;
-}
-
-.categorias .lista-categorias .categoria .buttons img {
+.lista-pedidos .pedido img{
     cursor: pointer;
+}
+
+.lista-pedidos > div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.lista-pedidos .itens{
+    width: 100%;
+    height: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    overflow-y: auto;
+
+    transition: .7s ease-in;
+}
+
+.lista-pedidos .itens .item{
+    width: 85%;
+    height: 10vh;
+
+    margin-bottom: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background: rgba(121, 111, 105, 0.1);
+    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.lista-pedidos .itens .item img{
+    height: 60%;
+}
+
+.lista-pedidos .itens .item p{
+    font-family: Nunito;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+  
+    color: var(--primary);
 }

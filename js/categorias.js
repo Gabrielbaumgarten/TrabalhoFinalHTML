@@ -209,7 +209,6 @@ function ListarCategoriasDropdown(){
 }
 
 function SelecionarCategoria(nome){
-    console.log('Aqui')
     var dropdownButton = document.getElementById('dropdown-button')
     dropdownButton.innerHTML = nome
 }

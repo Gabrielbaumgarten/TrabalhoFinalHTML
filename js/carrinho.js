@@ -9,8 +9,6 @@ function AtualizarCarrinho(){
     httpRequest.open('GET', 'http://localhost:3000/carrinho', false)
     httpRequest.send()
 
-    console.log(resposta)
-
     AlterarIconeCarrinho(resposta.length)
     
 }
@@ -68,13 +66,8 @@ function ListarCarrinho(){
 
     var id_itens_adicionados = []
 
-    console.log('carrinho:')
-    console.log(resposta)
-
     resposta.forEach(item =>{
-        if(id_itens_adicionados.includes(item.produto_id)){
-            console.log('Item já adicionado')
-        } else{
+        if(!id_itens_adicionados.includes(item.produto_id)){
             id_itens_adicionados.push(item.produto_id)
 
             var divProduto = document.createElement('div')

@@ -59,8 +59,6 @@ function AdicionarNoCarrinho(produto){
     httpRequest.open('POST', 'http://localhost:3000/carrinho', false)
     httpRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
     httpRequest.send(obj)
-
-    // console.log(resposta)
 }
 
 function NumProdutosCarrinho(){

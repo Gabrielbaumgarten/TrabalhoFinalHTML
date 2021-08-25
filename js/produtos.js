@@ -9,7 +9,6 @@ function ListarProdutosAdm(){
     httpRequest.open('GET', 'http://loja.buiar.com/?key=3Tz81Yftd3C&c=produto&t=listar&f=json', false)
     httpRequest.send()
 
-    console.log(resposta.dados)
     resposta.dados.forEach( produto =>{
 
       var divProduto = document.createElement('div')

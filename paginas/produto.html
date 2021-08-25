@@ -36,7 +36,6 @@
       async function ComprarProduto(){
         AdicionarNoCarrinhoClick()
 
-        // console.log('Start transition')
         // startTrasition()
         // console.log('Finish transition')
         
@@ -45,6 +44,14 @@
         // console.log('Finish promisse')
         // window.location.assign('./checkout.html')
       }
+      async function MudarPagina(url){
+            startTrasition()
+
+            await new Promise(r => setTimeout(r, 2000))
+
+            window.location.assign(url)
+        
+        }
     </script>
 
     <!-- Fontes -->
@@ -64,7 +71,7 @@
     </div>
 
     <div style='display: flex'>
-      <div class="carrinho" ondrop="Drop(event)" ondragover="AllowDrop(event)" onclick="AtualizarCarrinho()">
+      <div class="carrinho" ondrop="Drop(event)" ondragover="AllowDrop(event)" onclick="MudarPagina('carrinho.html')">
         <img id='carrinho' src="../assets/icon-carrinho-0.svg" alt="">
       </div>
   

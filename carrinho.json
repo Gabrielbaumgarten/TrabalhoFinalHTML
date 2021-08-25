@@ -1,48 +1,5 @@
 {
   "carrinho": [
-    {
-      "produto_id": "503",
-      "codigo": "2487281",
-      "categoria": "83",
-      "nome": "AVIATOR TOTAL BLACK",
-      "descricao": "Um dos modelos de óculos de sol mais icônicos do mundo, o Ray-Ban Aviator foi criado originalmente para aviadores dos EUA em 1937. Hoje, ele é um símbolo do estilo americano clássico e da qualidade no desempenho. Para esta versão, o modelo tradicional passou por um blecaute: armação de metal e ponteiras pretas com lentes polarizadas pretas. O Aviator Total Black é elegante, minimalista e heroicamente notável.",
-      "preco": "980.00",
-      "imagem": "Produtos/oculos_de_sol/aviator_total_black",
-      "peso": "0.2",
-      "id": 1
-    },
-    {
-      "produto_id": "503",
-      "codigo": "2487281",
-      "categoria": "83",
-      "nome": "AVIATOR TOTAL BLACK",
-      "descricao": "Um dos modelos de óculos de sol mais icônicos do mundo, o Ray-Ban Aviator foi criado originalmente para aviadores dos EUA em 1937. Hoje, ele é um símbolo do estilo americano clássico e da qualidade no desempenho. Para esta versão, o modelo tradicional passou por um blecaute: armação de metal e ponteiras pretas com lentes polarizadas pretas. O Aviator Total Black é elegante, minimalista e heroicamente notável.",
-      "preco": "980.00",
-      "imagem": "Produtos/oculos_de_sol/aviator_total_black",
-      "peso": "0.2",
-      "id": 2
-    },
-    {
-      "produto_id": "503",
-      "codigo": "2487281",
-      "categoria": "83",
-      "nome": "AVIATOR TOTAL BLACK",
-      "descricao": "Um dos modelos de óculos de sol mais icônicos do mundo, o Ray-Ban Aviator foi criado originalmente para aviadores dos EUA em 1937. Hoje, ele é um símbolo do estilo americano clássico e da qualidade no desempenho. Para esta versão, o modelo tradicional passou por um blecaute: armação de metal e ponteiras pretas com lentes polarizadas pretas. O Aviator Total Black é elegante, minimalista e heroicamente notável.",
-      "preco": "980.00",
-      "imagem": "Produtos/oculos_de_sol/aviator_total_black",
-      "peso": "0.2",
-      "id": 3
-    },
-    {
-      "produto_id": "504",
-      "codigo": "2147483647",
-      "categoria": "220",
-      "nome": "JA-JO OPTICS",
-      "descricao": "Tudo o que vai, volta - e desta vez, volta com um toque de cor e atitude divertida! A Ray-Ban repagina um ícone vintage com alegres cores de balas que trazem a exuberante vibração de festival do modelo Ja-Jo. Celebre duas das tendências mais populares deste ano em estilo Ray-Ban, com esta grande armação redonda totalmente em metal. Vista o mood do momento graças às diversas e vivazes cores do acabamento emborrachado, para uma perspectiva sempre jovem de um design icônico, com appeal moderno e contemporâneo.",
-      "preco": "630.00",
-      "imagem": "Produtos/oculos_de_grau/ja-jo_optics",
-      "peso": "0.2",
-      "id": 4
-    }
+    
   ]
 }
